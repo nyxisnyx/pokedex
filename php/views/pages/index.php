@@ -1,6 +1,6 @@
 <?php
 $title = "Home";
-require_once '../partials/head.php';
+require_once __DIR__ . '../../partials/head.php';
 ?>
 
 <main>
@@ -10,5 +10,5 @@ require_once '../partials/head.php';
 </main>
 
 <?php
-require_once '../partials/end.php';
+require_once __DIR__ . '../../partials/end.php';
 ?>
