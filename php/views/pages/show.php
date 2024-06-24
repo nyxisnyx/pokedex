@@ -1,6 +1,6 @@
 <?php
 $title = $_GET['name'];
-require_once __DIR__ . '../../partials/header.php';
+require_once '../partials/head.php';
 ?>
 
 <main>
@@ -11,5 +11,5 @@ require_once __DIR__ . '../../partials/header.php';
 </main>
 
 <?php
-require_once __DIR__ . '../../partials/footer.php';
+require_once '../partials/end.php';
 ?>
