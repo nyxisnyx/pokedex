@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $stmt->bindParam(':username', $username);
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($user && password_verify($password, $user['password'])) {
+            if ($user && password_verify($password, $user['Password'])) {
                 // Initiates session and redirects to homepage
                 session_start();
                 $_SESSION["username"] = $user["username"];
@@ -40,15 +40,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
     ?>
 </h5>
-<h2>my Account</h2>
-<form method="POST" action="">
-    <label for="">Username*</label><br>
-    <input type="text" name="username" placeholder="Username"><br><br>
-    <label for="">Password*</label><br>
-    <input type="password" name="password" placeholder="Password"><br><br>
-    <button type="submit">Connection</button>
-</form>
-<p>Not registered yet? Click <a href="register.php">here</a></p>
+<div class="">
+    <h2>My Account</h2>
+    <form method="POST" action="">
+        <label for="username">Username*</label><br>
+        <input type="text" name="username" placeholder="Username"><br><br>
+        <label for="password">Password*</label><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <button type="submit">Connection</button>
+    </form>
+    <p>Not registered yet? Click <a href="register.php">here</a></p>
+</div>
 
 <?php
 require_once __DIR__ . '../../partials/end.php';

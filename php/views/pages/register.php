@@ -59,18 +59,19 @@ require_once __DIR__ . '../../partials/head.php';
     }
     ?>
 </h5>
-<h2>Register</h2>
-<form method="POST" action="">
-    <label for="username">Username *</label><br>
-    <input type="text" name="username" placeholder="Username" required><br><br>
-    <label for="password">Password *</label><br>
-    <input type="password" name="password" placeholder="Password" required><br><br>
-    <label for="password-confirm">Password Verification *</label><br>
-    <input type="password" name="password-confirm" placeholder="Password Verification" required><br><br><br>
-    <button type="submit">New Account</button>
-</form>
-<p>Already have an account? Click <a href="login.php">Here</a></p>
-
+<div class="">
+    <h2>Register</h2>
+    <form method="POST" action="">
+        <label for="username">Username*</label><br>
+        <input type="text" name="username" placeholder="Username" required><br><br>
+        <label for="password">Password*</label><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
+        <label for="password-confirm">Password Verification*</label><br>
+        <input type="password" name="password-confirm" placeholder="Password Verification" required><br><br>
+        <button type="submit">New Account</button>
+    </form>
+    <p>Already have an account? Click <a href="login.php">here</a></p>
+</div>
 
 <?php
 require_once __DIR__ . '../../partials/end.php';
