@@ -19,17 +19,11 @@ $start_index = ($page - 1) * $results_per_page;
 $stmt = $pdo->prepare("SELECT * FROM pokemon LIMIT $start_index, $results_per_page");
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo count($results);
-
-// function paginate($results)
-// {
-//     $total_pages = ceil((count($results)) / $results_per_page);
-//     return $total_pages;
-// }
-
-$total_pages = paginate(range(1, 1000));
 
 ?>
+
+
+
 
 
 <div class="pagination">
