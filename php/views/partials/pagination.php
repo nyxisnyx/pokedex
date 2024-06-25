@@ -15,12 +15,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 function generate_page_nav($page, $total_pages)
 {
     echo "<div class='pagination'>";
+    echo "<form action='' method='GET'>";
+    echo "<input name='page' value='" . (1) . "' type='hidden'>";
+    echo "<button type='submit'" . ($page == 1 ? "disabled" : "") . ">&laquo; First</button>";
+    echo "</form>";
+
     for ($i = 1; $i <= $total_pages; $i++) {
-        echo "<form action='' method='GET' style='display:inline;'>";
+        echo "<form action='' method='GET'>";
         echo "<input name='page' value='$i' type='hidden'>";
-        echo "<button type='submit'>$i</button>";
+        echo "<button" . (($page == $i) ? " class=active" : "") . " type='submit'>$i</button>";
         echo "</form>";
     }
+
+    echo "<form action='' method='GET'>";
+    echo "<input name='page' value='" . ($total_pages) . "' type='hidden'>";
+    echo "<button type='submit'" . ($page == $total_pages ? "disabled" : "") . ">Last &raquo;</button>";
+    echo "</form>";
     echo "</div>";
 }
 
@@ -44,8 +54,6 @@ function generate_cards($sliced_results)
 
 function paginate($results, $page)
 {
-    echo count($results);
-    echo $page;
     //  Defines the amount of pokemon displayed on one page
     $results_per_page = 100;
     $start_index = ($page - 1) * $results_per_page;

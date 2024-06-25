@@ -122,4 +122,15 @@ main .poke-card .poke-details {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   padding-top: 25%;
   margin-top: 1dvh;
+}
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+}
+
+.active {
+  font-weight: bold;
 }/*# sourceMappingURL=styles.css.map */
