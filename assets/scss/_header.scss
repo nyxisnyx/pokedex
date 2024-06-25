@@ -7,6 +7,9 @@ header {
         margin-left:auto;
         margin-right:auto;
         margin-bottom:4dvh;
+        @include mobile {
+            width:60%;
+        }
     }
 
     #navbar {
@@ -14,23 +17,34 @@ header {
         flex-direction: row;
         justify-content: space-evenly;
         width: 100%;
+        height: fit-content;
         padding-left:35%;
         padding-right:35%;
-        padding-top:1dvh;
-        padding-bottom:1dvh;
+        // padding-top:1dvh;
+        // padding-bottom:1dvh;
         background-color:$white;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        @include mobile {
+            padding-left:5%;
+            padding-right:5%;
+        }
 
         .navbarLink {
             text-decoration: none;
+            padding: 3vh 0;
             font-family: $mainfont;
             font-size: 1.3rem;
             color:$darkgray;
+            @include mobile {
+                font-size: 1rem;
+            }
         }
 
         .active {
             // add styles to active nav link here
             font-weight: bold;
+            border-bottom: 5px solid rgb(255, 205, 3);
+            box-sizing: border-box;
         }
     }
 }

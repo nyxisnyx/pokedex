@@ -67,26 +67,45 @@ header #pkmLogo {
   margin-right: auto;
   margin-bottom: 4dvh;
 }
+@media screen and (max-width: 768px) {
+  header #pkmLogo {
+    width: 60%;
+  }
+}
 header #navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   padding-left: 35%;
   padding-right: 35%;
-  padding-top: 1dvh;
-  padding-bottom: 1dvh;
   background-color: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+@media screen and (max-width: 768px) {
+  header #navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
 header #navbar .navbarLink {
   text-decoration: none;
+  padding: 3vh 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   font-size: 1.3rem;
   color: #363636;
 }
+@media screen and (max-width: 768px) {
+  header #navbar .navbarLink {
+    font-size: 1rem;
+  }
+}
 header #navbar .active {
   font-weight: bold;
+  border-bottom: 5px solid rgb(255, 205, 3);
+  box-sizing: border-box;
 }
 
 body {
@@ -102,9 +121,9 @@ main {
   padding-top: 10dvh;
 }
 main .poke-card {
-  width: 15dvw;
-  margin-top: 1dvh;
-  margin-bottom: 10dvh;
+  width: 230px;
+  margin-top: 30px;
+  margin-bottom: 50px;
   margin-left: 1dvw;
   margin-right: 1dvw;
   position: relative;
@@ -120,11 +139,21 @@ main .poke-card img {
 }
 main .poke-card .poke-details {
   background-color: #fff;
-  padding-left: 1rem;
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   padding-top: 25%;
   margin-top: 1dvh;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 25px;
+  padding-bottom: 1dvh;
+}
+main .poke-card .poke-details .poke-id {
+  font-size: 0.7rem;
+  color: #363636;
+}
+main .poke-card .poke-details .poke-name {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .pagination {
@@ -135,4 +164,207 @@ main .poke-card .poke-details {
 }
 .pagination .active {
   font-weight: bold;
+}
+
+.poke-types {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Normal {
+  background-color: #a0a2a0;
+  color: #454545;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Fire {
+  background-color: #ef3838;
+  color: #580e0e;
+  padding: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Fighting {
+  background-color: #ff8000;
+  color: #422100;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Water {
+  background-color: #297ff0;
+  color: #0f325e;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Flying {
+  background-color: #81baf0;
+  color: #33495f;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Grass {
+  background-color: #3ea128;
+  color: #194110;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Poison {
+  background-color: #a957e4;
+  color: #451568;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Electric {
+  background-color: #ffce2c;
+  color: #876700;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Ground {
+  background-color: #915221;
+  color: #f4be95;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Psychic {
+  background-color: #f04178;
+  color: #53172a;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Rock {
+  background-color: #b0aa82;
+  color: #585541;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Ice {
+  background-color: #3dcef2;
+  color: #174c5a;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Bug {
+  background-color: #b9cc24;
+  color: #4c540e;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Dragon {
+  background-color: #5162e0;
+  color: #a6aeec;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Ghost {
+  background-color: #704170;
+  color: #e7a1e7;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Dark {
+  background-color: #614d4e;
+  color: #ddc5c6;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Steel {
+  background-color: #5fa0b8;
+  color: #28444e;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
+}
+
+.Fairy {
+  background-color: #f071f0;
+  color: #6f356f;
+  padding: 1dvh;
+  margin-left: 1dvh;
+  text-align: center;
+  font-weight: bold;
+  width: 35%;
+  display: block;
 }/*# sourceMappingURL=styles.css.map */
