@@ -30,7 +30,7 @@ require_once __DIR__ . '../../partials/head.php';
     <?php foreach ($results as $result): ?>
         <!-- <?php echo "<img src='../../../assets/images/pokemon/" . $result["imageBig"] . "' alt='image not found'>"; ?> -->
         <?php echo "<div class='poke-card'>" ?>
-        <?php echo "<img src='" . $result["imageThumbnail"] . "'" ?>
+        <?php echo "<img src='" . $result["imageThumbnail"] . "'>" ?>
         <?php echo "<div class='poke-details'>" ?>
         <?php echo "<p class='poke-id'>" . formatPokeId($result["ID"]) . "</p>" ?>
         <?php echo "<p class='poke-name'>" . $result["name"] . "</p>" ?>
