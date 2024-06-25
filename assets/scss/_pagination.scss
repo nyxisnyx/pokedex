@@ -1,0 +1,12 @@
+.pagination {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family: $mainfont;
+
+
+}
+
+.active {
+    font-weight: bold;
+}

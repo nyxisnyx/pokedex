@@ -12,8 +12,8 @@
     <header>
         <img src="../../../assets/images/pokemon-logo.png" alt="The traditional Pokemon logo" id="pkmLogo">
         <nav id="navbar">
-            <a href="#" class="navbarLink">Pokedex</a>
-            <a href="#" class="navbarLink">My account</a>
-            <a href="#" class="navbarLink">Register</a>
+            <a href="index.php" class="navbarLink">Pokedex</a>
+            <a href="login.php" class="navbarLink">My account</a>
+            <a href="register.php" class="navbarLink">Register</a>
         </nav>
     </header>
