@@ -26,11 +26,23 @@ main {
 
         .poke-details {
             background-color:$white;
-            padding-left:1rem;
             text-align:center;
             font-family: $mainfont;
             padding-top:25%;
             margin-top:1dvh;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            border-radius: 25px;
+            padding-bottom: 1dvh;
+
+            .poke-id {
+                font-size: 0.7rem;
+                color:$darkgray;
+            }
+
+            .poke-name {
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
         }
     }
 }
