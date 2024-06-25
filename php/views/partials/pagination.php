@@ -1,5 +1,7 @@
 <?php
 
+// "<img src='../../../assets/images/pokemon/" . $result["imageBig"] . "' alt='image not found'>"
+
 
 // Sets page to 1 per default, else set page to page clicked
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -38,10 +40,6 @@ function generate_cards($sliced_results)
             </div>
         </div>";
     }
-
-
-
-
 }
 
 function paginate($results, $page)
@@ -59,17 +57,3 @@ function paginate($results, $page)
 }
 
 ?>
-
-<!-- <main> -->
-<!-- <h1>Pokedex - Homepage</h1>
-    <p>Hello <strong><?php echo $user['name'] ?></p></strong>
-<a href="/pokemon?name=pikachu">Pikachu</a> -->
-<!-- <?php foreach ($results as $result): ?> -->
-
-    <!-- <?php echo "<img src='../../../assets/images/pokemon/" . $result["imageBig"] . "' alt='image not found'>"; ?> -->
-
-
-
-<?php endforeach; ?>
-
-</main> -->
