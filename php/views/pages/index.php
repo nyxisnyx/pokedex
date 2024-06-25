@@ -11,7 +11,7 @@ function formatPokeId($number)
 // Connects to the DB 
 require_once ("../../queries/connect.php");
 
-$stmt = $pdo->prepare("SELECT * FROM pokemon;");
+$stmt = $pdo->prepare("SELECT * FROM pokemon LIMIT 50;");
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

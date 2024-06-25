@@ -1,0 +1,31 @@
+header {
+    margin-top:2dvh;
+    margin-bottom:2dvh;
+    background-color: $lightgray;
+    #pkmLogo {
+        width:30%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:4dvh;
+    }
+
+    #navbar {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        padding-left:35%;
+        padding-right:35%;
+        padding-top:1dvh;
+        padding-bottom:1dvh;
+        background-color:$white;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        .navbarLink {
+            text-decoration: none;
+            font-family: $mainfont;
+            font-size: 1.3rem;
+            color:$darkgray;
+        }
+    }
+}

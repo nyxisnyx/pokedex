@@ -9,3 +9,11 @@
 </head>
 
 <body>
+    <header>
+        <img src="../../../assets/images/pokemon-logo.png" alt="The traditional Pokemon logo" id="pkmLogo">
+        <nav id="navbar">
+            <a href="#" class="navbarLink">Pokedex</a>
+            <a href="#" class="navbarLink">My account</a>
+            <a href="#" class="navbarLink">Register</a>
+        </nav>
+    </header>
