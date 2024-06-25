@@ -67,23 +67,45 @@ header #pkmLogo {
   margin-right: auto;
   margin-bottom: 4dvh;
 }
+@media screen and (max-width: 768px) {
+  header #pkmLogo {
+    width: 60%;
+  }
+}
 header #navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   padding-left: 35%;
   padding-right: 35%;
-  padding-top: 1dvh;
-  padding-bottom: 1dvh;
   background-color: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+@media screen and (max-width: 768px) {
+  header #navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
 header #navbar .navbarLink {
   text-decoration: none;
+  padding: 3vh 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   font-size: 1.3rem;
   color: #363636;
+}
+@media screen and (max-width: 768px) {
+  header #navbar .navbarLink {
+    font-size: 1rem;
+  }
+}
+header #navbar .active {
+  font-weight: bold;
+  border-bottom: 5px solid rgb(255, 205, 3);
+  box-sizing: border-box;
 }
 
 body {
@@ -99,9 +121,9 @@ main {
   padding-top: 10dvh;
 }
 main .poke-card {
-  width: 15dvw;
-  margin-top: 1dvh;
-  margin-bottom: 10dvh;
+  width: 230px;
+  margin-top: 30px;
+  margin-bottom: 50px;
   margin-left: 1dvw;
   margin-right: 1dvw;
   position: relative;
@@ -140,8 +162,7 @@ main .poke-card .poke-details .poke-name {
   justify-content: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
 }
-
-.active {
+.pagination .active {
   font-weight: bold;
 }
 
