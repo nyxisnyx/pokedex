@@ -27,5 +27,10 @@ header {
             font-size: 1.3rem;
             color:$darkgray;
         }
+
+        .active {
+            // add styles to active nav link here
+            font-weight: bold;
+        }
     }
 }

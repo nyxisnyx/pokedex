@@ -85,6 +85,9 @@ header #navbar .navbarLink {
   font-size: 1.3rem;
   color: #363636;
 }
+header #navbar .active {
+  font-weight: bold;
+}
 
 body {
   background-color: #ccc;
@@ -130,7 +133,6 @@ main .poke-card .poke-details {
   justify-content: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
 }
-
-.active {
+.pagination .active {
   font-weight: bold;
 }/*# sourceMappingURL=styles.css.map */
