@@ -13,14 +13,27 @@ main {
         margin-left:1dvw;
         margin-right:1dvw;
         position:relative;
-        img {
+        .poke-thumbnail {
             width:50%;
-            margin-left:auto;
-            margin-right:auto;
+            // margin-left:auto;
+            // margin-right:auto;
             position:absolute;
             top: -40%;
             left: 25%;
             margin-bottom:1dvh;
+        }
+        .fav {
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            right: 10px;
+            top: 10px;
+
+            &:hover {
+                cursor:pointer;
+                transform: scale(110%);
+                transition: ease-in-out 0.4s
+            }
         }
 
         .poke-details {

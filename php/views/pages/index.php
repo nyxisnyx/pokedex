@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 // function that transforms an int into a pokemon ID format
 function formatPokeId($number)
 {
@@ -10,7 +12,7 @@ function formatPokeId($number)
     return $pokeId;
 }
 
-// Connects to the DB 
+// Connects to the DB
 require_once ("../../queries/connect.php");
 require_once ("../partials/pagination.php");
 
@@ -26,9 +28,6 @@ require_once __DIR__ . '../../partials/head.php';
 ?>
 
 <main>
-    <!-- <h1>Pokedex - Homepage</h1>
-    <p>Hello <strong><?php echo $user['name'] ?></p></strong>
-    <a href="/pokemon?name=pikachu">Pikachu</a> -->
     <?php
     paginate($results, $page);
     ?>

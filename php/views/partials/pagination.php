@@ -52,7 +52,6 @@ function generate_page_nav($page, $total_pages)
         echo "</form>";
     }
 
-
     echo "<form action='' method='GET'>";
     echo "<input name='page' value='" . ($total_pages) . "' type='hidden'>";
     echo "<button type='submit'" . ($page == $total_pages ? "disabled" : "") . ">&raquo;</button>";
@@ -60,12 +59,20 @@ function generate_page_nav($page, $total_pages)
     echo "</div>";
 }
 
-function generate_cards($sliced_results)
+function generate_cards($sliced_results, $page)
 {
     foreach ($sliced_results as $result) {
         echo "
         <div class='poke-card'>
-            <img src='" . $result["imageThumbnail"] . "'>
+        <img class='poke-thumbnail' src='" . $result["imageThumbnail"] . "'>";
+
+        if (isset($_SESSION["user"])) {
+            echo "<input name='page' value='" . $page . "' type='hidden'>";
+            echo "<img class='fav favourite_" . $result['ID'] . "' src='../../../assets/images/star.svg'>";
+
+        }
+
+        echo "
             <div class='poke-details'>
                 <p class='poke-id'>" . formatPokeId($result["ID"]) . "</p>
                 <p class='poke-name'>" . $result["name"] . "</p>
@@ -87,7 +94,7 @@ function paginate($results, $page)
     $total_pages = ceil(count($results) / $results_per_page);
     $sliced_results = array_slice($results, $start_index, $results_per_page);
 
-    generate_cards($sliced_results);
+    generate_cards($sliced_results, $page);
     generate_page_nav($page, $total_pages);
 }
 
