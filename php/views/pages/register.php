@@ -1,4 +1,12 @@
 <?php
+$title = "Register";
+require_once __DIR__ . '../../partials/head.php';
+?>
+
+<?php
+
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["password-confirm"])) {
         $username = trim($_POST["username"]);
@@ -30,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     $stmt->bindParam(':password', $hashed_password);
                     $stmt->execute();
                     session_start();
-                    $_SESSION["username"] = $username;
+                    $_SESSION["user"] = $username;
                     header("location: index.php");
                     exit();
                 }
@@ -43,15 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $message = "Please fill out all fields";
     }
 }
-
 ?>
 
 
 
-<?php
-$title = "Register";
-require_once __DIR__ . '../../partials/head.php';
-?>
+
 
 <h5>
     <?php if (isset($message)) {

@@ -7,13 +7,12 @@ main {
     padding-top:10dvh;
 
     .poke-card {
-        width:15dvw;
-        margin-top: 1dvh;
-        margin-bottom:10dvh;
+        width:230px;
+        margin-top: 30px;
+        margin-bottom:50px;
         margin-left:1dvw;
         margin-right:1dvw;
         position:relative;
-
         img {
             width:50%;
             margin-left:auto;
@@ -26,11 +25,23 @@ main {
 
         .poke-details {
             background-color:$white;
-            padding-left:1rem;
             text-align:center;
             font-family: $mainfont;
             padding-top:25%;
             margin-top:1dvh;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            border-radius: 25px;
+            padding-bottom: 1dvh;
+
+            .poke-id {
+                font-size: 0.7rem;
+                color:$darkgray;
+            }
+
+            .poke-name {
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
         }
     }
 }

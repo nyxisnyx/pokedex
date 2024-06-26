@@ -161,7 +161,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     </div>
                 </div>
 
-                <div class="loading-bar">
+                <div class="evolution">
+                
                     <?php if ($prevEvolution): ?>
                         <div class="evolution-card">
                             <a href="show.php?id=<?php echo htmlspecialchars($prevEvolution['ID']); ?>">
@@ -169,6 +170,17 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                 <p><?php echo htmlspecialchars($prevEvolution['name']); ?></p>
                             </a>
                         </div>
+                        <?php // Display all previous evolutions of the previous evolution ?>
+                    <?php if (!empty($allPrevEvolutions)): ?>
+                        <?php foreach ($allPrevEvolutions as $prevEvolution): ?>
+                            <div class="evolution-card">
+                                <a href="show.php?id=<?php echo htmlspecialchars($prevEvolution['ID']); ?>">
+                                    <img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>">
+                                    <p><?php echo htmlspecialchars($prevEvolution['name']); ?></p>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                     <?php else: ?>
                         <div class="evolution-card"></div>
                     <?php endif; ?>
@@ -189,17 +201,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                         <div class="evolution-card"></div>
                     <?php endif; ?>
                     
-                    <?php // Display all previous evolutions of the previous evolution ?>
-                    <?php if (!empty($allPrevEvolutions)): ?>
-                        <?php foreach ($allPrevEvolutions as $prevEvolution): ?>
-                            <div class="evolution-card">
-                                <a href="show.php?id=<?php echo htmlspecialchars($prevEvolution['ID']); ?>">
-                                    <img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>">
-                                    <p><?php echo htmlspecialchars($prevEvolution['name']); ?></p>
-                                </a>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                    
                     
                     <?php // Display all next evolutions of the next evolution ?>
                     <?php if (!empty($allNextEvolutions)): ?>
