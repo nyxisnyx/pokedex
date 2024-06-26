@@ -346,4 +346,33 @@ main .poke-card .poke-details .poke-name {
   font-weight: bold;
   width: 35%;
   display: block;
+}
+
+footer {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #363636;
+  margin-top: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+}
+footer a {
+  color: #363636;
+  text-decoration: none;
+}
+footer .githubLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
+}
+footer .githubLinks img {
+  width: 1.5rem;
+  filter: invert(21%) sepia(0%) saturate(1386%) hue-rotate(210deg) brightness(86%) contrast(89%);
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }/*# sourceMappingURL=styles.css.map */
