@@ -12,8 +12,15 @@
     <header>
         <img src="../../../assets/images/pokemon-logo.png" alt="The traditional Pokemon logo" id="pkmLogo">
         <nav id="navbar">
-            <a href="index.php" class="navbarLink">Pokedex</a>
-            <a href="login.php" class="navbarLink">My account</a>
-            <a href="register.php" class="navbarLink">Register</a>
+            <a href="index.php" class='navbarLink <?php if (isset($title) && $title == "Home") {
+                echo "active";
+            } ?>'>Pokedex</a>
+            <a href="login.php" class='navbarLink <?php if (isset($title) && $title == "Login") {
+                echo "active";
+            } ?>'>My
+                account</a>
+            <a href="register.php" class='navbarLink <?php if (isset($title) && $title == "Register") {
+                echo "active";
+            } ?>'>Register</a>
         </nav>
     </header>

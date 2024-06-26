@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // function that transforms an int into a pokemon ID format
 function formatPokeId($number)
 {
@@ -22,8 +24,6 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $title = "Home";
 require_once __DIR__ . '../../partials/head.php';
 ?>
-
-
 
 <main>
     <!-- <h1>Pokedex - Homepage</h1>
