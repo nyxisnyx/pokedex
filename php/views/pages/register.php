@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 if ($user) {
                     $message = "Username already in use";
                 } else {
+                    // saves user to DB
                     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                     $stmt = $pdo->prepare('INSERT INTO Users (username, password) VALUES
                     (:username, :password)
@@ -37,10 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     $stmt->bindParam(':username', $username);
                     $stmt->bindParam(':password', $hashed_password);
                     $stmt->execute();
-                    session_start();
-                    $_SESSION["user"] = $username;
-                    header("location: index.php");
-                    exit();
+                    // Login user
+                    require_once ("../partials/login.php");
+                    $message = login($username, $password);
                 }
             } catch (PDOException $e) {
                 // Handle database errors

@@ -4,7 +4,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
     width:100%;
-    padding-top:10dvh;
+    padding-top:5dvh;
 
     .poke-card {
         width:230px;
@@ -35,7 +35,7 @@ main {
             &:hover {
                 cursor:pointer;
                 transform: scale(110%);
-                transition: ease-in-out 0.4s
+                transition: ease-in-out 0.4s;
             }
         }
 
@@ -61,4 +61,15 @@ main {
             }
         }
     }
+}
+
+.details-link:hover {
+    img {
+        filter: brightness(110%);
+        transition: ease-in-out 0.4s;
+    }
+    img, p {
+    transform: scale(105%);
+    transition: ease-in-out 0.4s;
+}
 }
