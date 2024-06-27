@@ -473,6 +473,12 @@ footer .githubLinks img {
   margin-bottom: 1dvh;
   margin-top: 3dvh;
 }
+.loginPage form button:hover {
+  transition: ease 0.4s;
+  font-weight: bold;
+  border: 2px solid #363636;
+  transform: scale(102%);
+}
 @media screen and (max-width: 768px) {
   .loginPage form button {
     width: 40%;
@@ -577,6 +583,12 @@ footer .githubLinks img {
   margin-bottom: 1dvh;
   margin-top: 3dvh;
 }
+.registerForm form button:hover {
+  transition: ease 0.4s;
+  font-weight: bold;
+  border: 2px solid #363636;
+  transform: scale(102%);
+}
 @media screen and (max-width: 768px) {
   .registerForm form button {
     width: 40%;
@@ -603,4 +615,28 @@ footer .githubLinks img {
   padding: 5px 15px;
   font-weight: bold;
   border-radius: 5px;
+}
+
+.search {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+  display: flex;
+  width: 100vw;
+  justify-content: right;
+  margin-right: 3em;
+  margin-bottom: 60px;
+}
+.search input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #363636;
+}
+.search button {
+  border-radius: 5px;
+  border: 1px solid #363636;
+  padding: 5px 10px;
+}
+.search button:hover {
+  transition: ease 0.4s;
+  font-weight: bold;
+  transform: scale(102%);
 }/*# sourceMappingURL=styles.css.map */

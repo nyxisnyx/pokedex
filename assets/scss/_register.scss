@@ -51,6 +51,12 @@
             display:block;
             margin-bottom:1dvh;
             margin-top:3dvh;
+            &:hover {
+                transition: ease 0.4s;
+                font-weight: bold;
+                border: 2px solid $darkgray;
+                transform:  scale(102%);
+            }
             @include mobile {
                 width : 40%;
             }

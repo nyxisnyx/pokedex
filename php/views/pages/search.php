@@ -5,8 +5,8 @@ require_once __DIR__ . '/../../queries/connect.php';
 require_once __DIR__ . '/../partials/pagination.php';
 
 
-$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-$per_page = 30;
+// $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+// $per_page = 30;
 
 
 $searchQuery = '';
@@ -14,8 +14,6 @@ $results = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['search'])) {
     $searchQuery = trim($_GET['search']);
-
-
     if (is_numeric($searchQuery)) {
         $stmt = $pdo->prepare("SELECT * FROM pokemon WHERE ID = :id");
         $stmt->execute(['id' => $searchQuery]);
