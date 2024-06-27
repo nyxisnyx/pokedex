@@ -10,6 +10,7 @@ if (!isset($_SESSION['user'])) {
     session_start();
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST["password"]) && isset($_POST["username"])) {
         $username = filter_var($_POST["username"]);
@@ -26,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 // Initiates session and redirects to homepage
                 session_start();
                 $_SESSION["user"] = $user["Username"];
+                $_SESSION["user_id"] = $user["ID"];
                 header("Location: index.php");
                 exit();
             } else {
@@ -45,18 +47,18 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
     ?>
 </h5>
-<div class="">
+<div class="loginPage">
     <h2>My Account</h2>
 
     <?php if (!isset($_SESSION["user"])): ?>
         <form method="POST" action="">
-            <label for="username">Username*</label><br>
-            <input type="text" name="username" placeholder="Username" required><br><br>
-            <label for="password">Password*</label><br>
-            <input type="password" name="password" placeholder="Password" required><br><br>
+            <label for="username">Username*</label>
+            <input type="text" name="username" placeholder="Username" required>
+            <label for="password">Password*</label>
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Connection</button>
         </form>
-        <p>Not registered yet? Click <a href="register.php">here</a></p>
+        <p>Not registered yet? <a href="register.php">Log in</a></p>
     <?php else: ?>
         Hello <b><?php echo $_SESSION["user"] ?></b>, we will probably display your favourite pokemon here.... eventually
         <form method="POST" action="../partials/logout.php">

@@ -79,8 +79,8 @@ header #navbar {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  padding-left: 35%;
-  padding-right: 35%;
+  padding-left: 30%;
+  padding-right: 30%;
   background-color: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -128,14 +128,27 @@ main .poke-card {
   margin-right: 1dvw;
   position: relative;
 }
-main .poke-card img {
+main .poke-card a {
+  text-decoration: none !important;
+}
+main .poke-card .poke-thumbnail {
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
   position: absolute;
   top: -40%;
   left: 25%;
   margin-bottom: 1dvh;
+}
+main .poke-card .fav {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 15px;
+  top: 15px;
+}
+main .poke-card .fav:hover {
+  cursor: pointer;
+  transform: scale(110%);
+  transition: ease-in-out 0.4s;
 }
 main .poke-card .poke-details {
   background-color: #fff;
@@ -149,11 +162,12 @@ main .poke-card .poke-details {
 }
 main .poke-card .poke-details .poke-id {
   font-size: 0.7rem;
-  color: #363636;
+  color: #363636 !important;
 }
 main .poke-card .poke-details .poke-name {
   font-weight: bold;
   font-size: 1.1rem;
+  color: #363636 !important;
 }
 
 .pagination {
@@ -181,6 +195,7 @@ main .poke-card .poke-details .poke-name {
   font-weight: bold;
   width: 35%;
   display: block;
+  text-decoration: none !important;
 }
 
 .Fire {
@@ -396,4 +411,128 @@ footer .githubLinks img {
   filter: invert(21%) sepia(0%) saturate(1386%) hue-rotate(210deg) brightness(86%) contrast(89%);
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.loginPage {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+  margin-top: 1dvh;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 25px;
+  padding-top: 3dvh;
+  padding-bottom: 3dvh;
+  padding-left: 1dvw;
+  padding-right: 1dvw;
+  color: #363636;
+}
+.loginPage h2 {
+  text-align: center;
+  margin-bottom: 1dvh;
+}
+.loginPage form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginPage form label {
+  margin-bottom: 1dvh;
+}
+.loginPage form input {
+  width: 90%;
+  background-color: #ccc;
+  margin-bottom: 1dvh;
+  border: 1px solid #363636;
+}
+.loginPage form button {
+  border-radius: 5px;
+  border: 1px solid #363636;
+  padding: 0.8rem;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 1dvh;
+  margin-top: 3dvh;
+}
+.loginPage p {
+  text-align: center;
+  margin-top: 1rem;
+}
+.loginPage p a {
+  color: #363636 !important;
+}
+.loginPage p a:hover {
+  font-style: italic;
+}
+.loginPage p a:link, .loginPage p a:visited, .loginPage p a:hover, .loginPage p a:active {
+  color: #363636 !important;
+}
+
+.registerForm {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+  margin-top: 1dvh;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 25px;
+  padding-top: 3dvh;
+  padding-bottom: 3dvh;
+  padding-left: 1dvw;
+  padding-right: 1dvw;
+  color: #363636;
+}
+.registerForm h2 {
+  text-align: center;
+  margin-bottom: 1dvh;
+}
+.registerForm form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.registerForm form label {
+  margin-bottom: 1dvh;
+}
+.registerForm form input {
+  width: 90%;
+  background-color: #ccc;
+  margin-bottom: 1dvh;
+  border: 1px solid #363636;
+}
+.registerForm form button {
+  border-radius: 5px;
+  border: 1px solid #363636;
+  padding: 0.8rem;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 1dvh;
+  margin-top: 3dvh;
+}
+.registerForm p {
+  text-align: center;
+  margin-top: 1rem;
+}
+.registerForm p a {
+  color: #363636 !important;
+}
+.registerForm p a:hover {
+  font-style: italic;
+}
+.registerForm p a:link, .registerForm p a:visited, .registerForm p a:hover, .registerForm p a:active {
+  color: #363636 !important;
 }/*# sourceMappingURL=styles.css.map */
