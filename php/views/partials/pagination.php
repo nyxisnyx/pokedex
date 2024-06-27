@@ -14,51 +14,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 function generate_page_nav($page, $total_pages)
 {
-    $page = intval($page);
     echo "<div class='pagination'>";
-    echo "<form action='' method='GET'>";
-    echo "<input name='page' value='1' type='hidden'>";
-    echo "<button type='submit'" . ($page == 1 ? "disabled" : "") . ">&laquo;</button>";
-    echo "</form>";
-    if ($page - 2 >= 1) {
-        echo "<button disabled>...</button>";
-        echo "<form action='' method='GET'>";
-        echo "<input name='page' value='" . $page - 1 . "' type='hidden'>";
-        echo "<button type='submit'>" . $page - 1 . "</button>";
-        echo "</form>";
+    if ($page > 1) {
+        echo '<a href="?page=' . ($page - 1) . '">&laquo; Previous</a>';
     }
-    if ($page == 2) {
-        echo "<input name='page' value='" . $page - 1 . "' type='hidden'>";
-        echo "<button type='submit'>" . $page - 1 . "</button>";
-        echo "</form>";
+    for ($i = 1; $i <= $total_pages; $i++) {
+        echo '<a href="?page=' . $i . '"' . ($i == $page ? ' class="active"' : '') . '>' . $i . '</a>';
     }
-    echo "<form action='' method='GET'>";
-    echo "<input name='page' value='" . $page . "' type='hidden'>";
-    echo "<button class='active' type='submit'>$page</button>";
-    echo "</form>";
-
-    if ($page + 2 <= $total_pages) {
-        echo "<form action='' method='GET'>";
-        echo "<input name='page' value='" . $page + 1 . "' type='hidden'>";
-        echo "<button type='submit'>" . $page + 1 . "</button>";
-        echo "</form>";
-        echo "<button disabled>...</button>";
+    if ($page < $total_pages) {
+        echo '<a href="?page=' . ($page + 1) . '">Next &raquo;</a>';
     }
-
-    if ($page == $total_pages - 1) {
-        echo "<form action='' method='GET'>";
-        echo "<input name='page' value='" . $page + 1 . "' type='hidden'>";
-        echo "<button type='submit'>" . $page + 1 . "</button>";
-        echo "</form>";
-    }
-
-
-    echo "<form action='' method='GET'>";
-    echo "<input name='page' value='" . ($total_pages) . "' type='hidden'>";
-    echo "<button type='submit'" . ($page == $total_pages ? "disabled" : "") . ">&raquo;</button>";
-    echo "</form>";
     echo "</div>";
 }
+
 
 function generate_cards($sliced_results)
 {
