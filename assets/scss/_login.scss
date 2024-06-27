@@ -71,17 +71,6 @@
             color: $darkgray !important;
         }
     }
-
-    .error {
-        width: 90%;
-        display: flex;
-        align-self: left;
-        background-color: rgb(207, 132, 132);
-        padding: 5px 15px;
-        font-weight: bold;
-        border-radius: 5px;
-    }
-
 }
 
 .greet {
@@ -90,8 +79,9 @@
     flex-direction : column;
     justify-content:center;
     align-items:center;
-    font-size: 32px;
-    width: 100vw;
+    text-align:center;
+    font-size: 27px;
+    width: 90vw;
     margin-bottom: 8vh;
     gap: 1vh;
     button {
@@ -114,3 +104,5 @@
     font-size: 25px;
     width: 100vw;
 }
+
+

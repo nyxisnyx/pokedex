@@ -491,15 +491,6 @@ footer .githubLinks img {
 .loginPage p a:link, .loginPage p a:visited, .loginPage p a:hover, .loginPage p a:active {
   color: #363636 !important;
 }
-.loginPage .error {
-  width: 90%;
-  display: flex;
-  align-self: left;
-  background-color: rgb(207, 132, 132);
-  padding: 5px 15px;
-  font-weight: bold;
-  border-radius: 5px;
-}
 
 .greet {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
@@ -507,8 +498,9 @@ footer .githubLinks img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
-  width: 100vw;
+  text-align: center;
+  font-size: 27px;
+  width: 90vw;
   margin-bottom: 8vh;
   gap: 1vh;
 }
@@ -602,4 +594,13 @@ footer .githubLinks img {
 }
 .registerForm p a:link, .registerForm p a:visited, .registerForm p a:hover, .registerForm p a:active {
   color: #363636 !important;
+}
+
+.error {
+  width: 90%;
+  display: flex;
+  background-color: rgba(207, 132, 132, 0.5);
+  padding: 5px 15px;
+  font-weight: bold;
+  border-radius: 5px;
 }/*# sourceMappingURL=styles.css.map */

@@ -13,8 +13,8 @@ if (!isset($_SESSION['user'])) {
 // Handles the login form submission
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST["password"]) && isset($_POST["username"])) {
-        $username = filter_var($_POST["username"]);
-        $password = filter_var($_POST["password"]);
+        $username = trim(strip_tags($_POST["username"]));
+        $password = trim(strip_tags($_POST["password"]));
         require_once ("../partials/login.php");
         $message = login($username, $password);
     }
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             </form>
             <p>Not registered yet? <a href="register.php">Register</a></p>
         <?php else: ?>
-            <section class="greet">Welcome trainer <?php echo $_SESSION["user"] ?> !
+            <section class="greet">Hello, trainer <?php echo $_SESSION["user"] ?> !
                 <form method="POST" action="../partials/logout.php">
                     <button type="submit">Logout</button>
                 </form>
@@ -65,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         <?php endif; ?>
     </div>
 </main>
-
-<?php
+<script <?php
 require_once __DIR__ . '../../partials/end.php';
 ?>
