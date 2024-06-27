@@ -39,11 +39,12 @@ require_once __DIR__ . '/../partials/head.php';
 ?>
 
 <main>
-    <form method="GET" action="search.php">
-        <input type="text" name="search" placeholder="Search by name or ID"
-            value="<?php echo htmlspecialchars($searchQuery); ?>">
-        <button type="submit">Search</button>
-    </form>
+    <div class="search">
+        <form method="GET" action="search.php">
+            <input type="text" name="search" placeholder="Search by name or ID">
+            <button type="submit">Search</button>
+        </form>
+    </div>
 
     <?php if (!empty($results)): ?>
         <main>
