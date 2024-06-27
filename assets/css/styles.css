@@ -535,4 +535,8 @@ footer .githubLinks img {
 }
 .registerForm p a:link, .registerForm p a:visited, .registerForm p a:hover, .registerForm p a:active {
   color: #363636 !important;
+}
+
+.pokemon-details {
+  display: flex;
 }/*# sourceMappingURL=styles.css.map */
