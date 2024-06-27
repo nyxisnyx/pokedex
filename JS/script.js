@@ -20,6 +20,13 @@ for (let fav of favs) {
       })
       .then((data) => {
         console.log(data);
+        if (data.status == "success") {
+          if (data.message.includes("added")) {
+            fav.src = "../../../assets/images/star.svg";
+          } else {
+            fav.src = "../../../assets/images/star_void.svg";
+          }
+        }
       })
       .catch((error) => {
         console.error("Fetch error:", error);

@@ -12,6 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 }
 
+
+
 function generate_page_nav($page, $total_pages)
 {
     $page = intval($page);
@@ -61,14 +63,26 @@ function generate_page_nav($page, $total_pages)
 
 function generate_cards($sliced_results, $page)
 {
+    if (isset($_SESSION["user_id"])) {
+        require ("../../queries/connect.php");
+        $stmt = $pdo->prepare("SELECT pokemon_id FROM pokedex WHERE user_id=:user_id");
+        $stmt->bindParam(':user_id', $_SESSION["user_id"]);
+        $stmt->execute();
+        $favourites = $stmt->fetchAll();
+        $favourites = array_column($favourites, 'pokemon_id');
+    }
+
     foreach ($sliced_results as $result) {
         echo "
         <div class='poke-card'>
         <img class='poke-thumbnail' src='" . $result["imageThumbnail"] . "'>";
+        if (isset($_SESSION["user_id"])) {
+            if (in_array($result["ID"], $favourites)) {
 
-        if (isset($_SESSION["user"])) {
-            echo "<input name='page' value='" . $page . "' type='hidden'>";
-            echo "<img title='Add to favourites' class='fav favourite_" . $result['ID'] . "' src='../../../assets/images/star.svg'>";
+                echo "<img title='Add to favourites' class='fav favourite_" . $result['ID'] . "' src='../../../assets/images/star.svg'>";
+            } else {
+                echo "<img title='Add to favourites' class='fav favourite_" . $result['ID'] . "' src='../../../assets/images/star_void.svg'>";
+            }
         }
 
         echo "

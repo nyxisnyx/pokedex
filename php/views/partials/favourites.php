@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute();
             $result = $stmt->fetch();
         } catch (Exception $e) {
-            echo json_encode(['status' => 'success', 'message' => 'Query failed at level fetch entry']);
+            echo json_encode(['status' => 'error', 'message' => 'Query failed at level fetch entry']);
             return;
         }
         if (empty($result)) {
@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
                 $stmt->bindParam(":pokemon_id", $id, PDO::PARAM_INT);
                 $stmt->execute();
+                echo json_encode(['status' => 'success', 'message' => 'Entry added to DB']);
             } catch (Exception $e) {
                 echo json_encode(['status' => 'error', 'message' => 'Failed to insert to DB']);
             }
