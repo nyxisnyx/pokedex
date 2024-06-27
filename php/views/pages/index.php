@@ -2,8 +2,6 @@
 
 session_start();
 
-
-
 // function that transforms an int into a pokemon ID format
 function formatPokeId($number)
 {

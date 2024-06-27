@@ -68,8 +68,7 @@ function generate_cards($sliced_results, $page)
 
         if (isset($_SESSION["user"])) {
             echo "<input name='page' value='" . $page . "' type='hidden'>";
-            echo "<img class='fav favourite_" . $result['ID'] . "' src='../../../assets/images/star.svg'>";
-
+            echo "<img title='Add to favourites' class='fav favourite_" . $result['ID'] . "' src='../../../assets/images/star.svg'>";
         }
 
         echo "

@@ -3,9 +3,7 @@ for (let fav of favs) {
   fav.addEventListener("click", (e) => {
     let classes = e.target.classList[1];
     let id = classes.split("_")[1];
-
     const data = { id: id };
-
     // Send data to PHP
     fetch("../partials/favourites.php", {
       method: "POST",
@@ -15,7 +13,6 @@ for (let fav of favs) {
       body: JSON.stringify(data),
     })
       .then((response) => {
-        console.log(response.json());
         if (response.ok) {
           return response.json();
         }

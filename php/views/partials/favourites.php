@@ -1,37 +1,56 @@
 <?php
 
+header('Content-Type: application/json');
+session_start();
 
-$json = file_get_contents('php://input');
-$data = json_decode($json, true);
-echo var_dump($data);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $json = file_get_contents('php://input');
+    $data = json_decode($json, true);
+    if (isset($data['id'])) {
+        $id = $data['id'];
+        $user_id = $_SESSION["user_id"];
+        require ("../../queries/connect.php");
+        // Checks if pokemon was already in users' favourites
+        try {
+            $stmt = $pdo->prepare("SELECT * FROM pokedex WHERE user_id =:user_id AND pokemon_id=:pokemon_id;");
+            $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+            $stmt->bindParam(":pokemon_id", $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetch();
+        } catch (Exception $e) {
+            echo json_encode(['status' => 'success', 'message' => 'Query failed at level fetch entry']);
+            return;
+        }
+        if (empty($result)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO pokedex (user_id, pokemon_id) VALUES (:user_id, :pokemon_id)");
+                $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+                $stmt->bindParam(":pokemon_id", $id, PDO::PARAM_INT);
+                $stmt->execute();
+            } catch (Exception $e) {
+                echo json_encode(['status' => 'error', 'message' => 'Failed to insert to DB']);
+            }
+        } else {
+            // Was already in favourites, delete the relation
+            try {
+                // IS already in the favourites
+                $stmt = $pdo->prepare("DELETE FROM pokedex WHERE user_id =:user_id AND pokemon_id=:pokemon_id");
+                $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+                $stmt->bindParam(":pokemon_id", $id, PDO::PARAM_INT);
+                $stmt->execute();
+                echo json_encode(['status' => 'success', 'message' => 'Entry deleted from DB']);
+            } catch (Exception $e) {
+                echo json_encode(['status' => 'error', 'message' => 'Failed to delete from DB']);
 
-    // if (isset($data['id'])) {
-    //     $id = $data['id'];
-
-    //     // Call PHP function here
-    //     // add_favourite($id);
-    //     echo $id;
-
-    //     // Send a JSON response back to the JavaScript
-    //     echo json_encode(['status' => 'success', 'message' => 'Received ID: ' . htmlspecialchars($id)]);
-    // } else {
-    //     echo json_encode(['status' => 'error', 'message' => 'ID not set']);
-    // }
+            }
+        }
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'ID not set in request']);
+    }
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request method']);
 }
 
-function handleId($id)
-{
-    // Your PHP function logic here
-    // For example, save the ID to the database or perform other actions
-    // Example:
-    // $db = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
-    // $stmt = $db->prepare('INSERT INTO favorites (id) VALUES (:id)');
-    // $stmt->execute(['id' => $id]);
-
-    // For now, we'll just log the ID for demonstration purposes
-    error_log("Handled ID: " . $id);
-}
 
 ?>

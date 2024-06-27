@@ -10,6 +10,7 @@ if (!isset($_SESSION['user'])) {
     session_start();
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST["password"]) && isset($_POST["username"])) {
         $username = filter_var($_POST["username"]);
@@ -26,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 // Initiates session and redirects to homepage
                 session_start();
                 $_SESSION["user"] = $user["Username"];
+                $_SESSION["user_id"] = $user["ID"];
                 header("Location: index.php");
                 exit();
             } else {

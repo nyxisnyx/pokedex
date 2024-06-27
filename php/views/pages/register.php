@@ -80,3 +80,46 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 <?php
 require_once __DIR__ . '../../partials/end.php';
 ?>
+
+
+
+<?php
+
+$user_id = 2;
+$id = 5;
+
+require_once ("../../queries/connect.php");
+try {
+    $stmt = $pdo->prepare("SELECT * FROM pokedex WHERE user_id =:user_id AND pokemon_id=:pokemon_id;");
+    $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+    $stmt->bindParam(":pokemon_id", $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch();
+} catch (Exception $e) {
+    echo "ERROR: " . $e->getMessage() . "";
+}
+if (empty($result)) {
+    try {
+        $stmt = $pdo->prepare("INSERT INTO pokedex (user_id, pokemon_id) VALUES (:user_id, :pokemon_id)");
+        $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(":pokemon_id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+    } catch (Exception $e) {
+        echo "ERROR: " . $e->getMessage() . "";
+    }
+
+
+} else {
+    try {
+        // IS already in the favourites
+        $stmt = $pdo->prepare("DELETE FROM pokedex WHERE user_id =:user_id AND pokemon_id=:pokemon_id");
+        $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(":pokemon_id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+    } catch (Exception $e) {
+        echo "ERROR: " . $e->getMessage() . "";
+    }
+}
+
+
+?>
