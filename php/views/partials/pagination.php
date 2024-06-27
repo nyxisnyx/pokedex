@@ -1,7 +1,7 @@
 <?php
 
 // "<img src='../../../assets/images/pokemon/" . $result["imageBig"] . "' alt='image not found'>"
-
+session_start();
 
 // Sets page to 1 per default, else set page to page clicked
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -11,8 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $page = $_GET['page'];
     }
 }
-
-
 
 function generate_page_nav($page, $total_pages)
 {
@@ -75,28 +73,32 @@ function generate_cards($sliced_results, $page)
     foreach ($sliced_results as $result) {
         echo "
         <div class='poke-card'>
+        <a href='show.php?id=" . htmlspecialchars($result["ID"]) . "'>
         <img class='poke-thumbnail' src='" . $result["imageThumbnail"] . "'>";
         if (isset($_SESSION["user_id"])) {
             if (in_array($result["ID"], $favourites)) {
-
                 echo "<img title='Add to favourites' class='fav favourite_" . $result['ID'] . "' src='../../../assets/images/star.svg'>";
             } else {
                 echo "<img title='Add to favourites' class='fav favourite_" . $result['ID'] . "' src='../../../assets/images/star_void.svg'>";
             }
         }
-
         echo "
             <div class='poke-details'>
                 <p class='poke-id'>" . formatPokeId($result["ID"]) . "</p>
                 <p class='poke-name'>" . $result["name"] . "</p>
                 <div class='poke-types'>
-                    <span class='" . $result["type1"] . "'>" . $result["type1"] . "</span>
-                    <span class='" . $result["type2"] . "'>" . $result["type2"] . "</span>
-                </div>
+                    <span class='" . $result["type1"] . "'>" . $result["type1"] . "</span>";
+        if (!empty($result['type2'])) {
+            echo "<span class='" . $result["type2"] . "'>" . $result["type2"] . "</span>";
+        }
+        ;
+        echo "</div>
             </div>
-        </div>";
+        </a>
+    </div>";
     }
 }
+
 
 function paginate($results, $page)
 {

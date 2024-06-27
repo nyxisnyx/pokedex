@@ -13,6 +13,10 @@ main {
         margin-left:1dvw;
         margin-right:1dvw;
         position:relative;
+
+        a {
+            text-decoration: none !important;
+        }
         .poke-thumbnail {
             width:50%;
             // margin-left:auto;
@@ -26,9 +30,8 @@ main {
             position: absolute;
             height: 30px;
             width: 30px;
-            right: 10px;
-            top: 10px;
-
+            right: 15px;
+            top: 15px;
             &:hover {
                 cursor:pointer;
                 transform: scale(110%);
@@ -48,12 +51,13 @@ main {
 
             .poke-id {
                 font-size: 0.7rem;
-                color:$darkgray;
+                color:$darkgray !important;
             }
 
             .poke-name {
                 font-weight: bold;
                 font-size: 1.1rem;
+                color:$darkgray !important;
             }
         }
     }

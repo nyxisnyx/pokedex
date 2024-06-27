@@ -1,0 +1,31 @@
+footer {
+    width: 100%;
+    background-color:$white;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    font-size:1rem;
+    text-align:center;
+    color:$darkgray;
+    margin-top:1rem;
+    font-family: $mainfont;
+
+    a {
+        color: $darkgray;
+        text-decoration: none;
+    }
+
+    .githubLinks {
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        margin-bottom: 0.8rem;
+        margin-top:0.8rem;
+
+        img {
+            width: 1.5rem;
+            filter: invert(21%) sepia(0%) saturate(1386%) hue-rotate(210deg) brightness(86%) contrast(89%);
+            margin-left: 0.5rem;
+            margin-right:0.5rem;
+        }
+    }
+}

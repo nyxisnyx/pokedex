@@ -1,12 +1,13 @@
 <?php
-
-session_start();
-
 // function that transforms an int into a pokemon ID format
 function formatPokeId($number)
 {
+    // Format the number to be four digits with leading zeros
     $formattedNumber = str_pad($number, 4, '0', STR_PAD_LEFT);
+
+    // Add the hashtag at the end
     $pokeId = $formattedNumber . '#';
+
     return $pokeId;
 }
 
@@ -18,9 +19,6 @@ $stmt = $pdo->prepare("SELECT * FROM pokemon;");
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-?>
-
-<?php
 $title = "Home";
 require_once __DIR__ . '../../partials/head.php';
 ?>
