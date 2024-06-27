@@ -1,0 +1,72 @@
+.loginPage {
+    width:45%;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:$white;
+    font-family: $mainfont;
+    margin-top:1dvh;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 25px;
+    padding-top:3dvh;
+    padding-bottom: 3dvh;
+    padding-left:1dvw;
+    padding-right:1dvw;
+    color:$darkgray;
+
+    h2 {
+        text-align: center;
+        margin-bottom:1dvh;
+    }
+
+    form {
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        label {
+            margin-bottom:1dvh;
+        }
+
+        input {
+            width: 90%;
+            background-color: $lightgray;
+            margin-bottom:1dvh;
+            border:1px solid $darkgray;
+        }
+    
+        button {
+            border-radius: 5px;
+            border: 1px solid $darkgray;
+            padding:0.8rem;
+            width: 30%;
+            margin-left:auto;
+            margin-right:auto;
+            display:block;
+            margin-bottom:1dvh;
+            margin-top:3dvh;
+        }
+    
+    }
+    
+    p {
+        text-align: center;
+        margin-top: 1rem;
+
+        a {
+            color: $darkgray !important;
+        }
+    
+        a:hover {
+            font-style: italic;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+            color: $darkgray !important;
+        }
+    }
+
+}
