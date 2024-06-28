@@ -655,6 +655,28 @@ footer .githubLinks img {
   transform: scale(102%);
 }
 
+.no-result {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+  margin-bottom: 4vh;
+}
+.no-result span {
+  font-weight: bold;
+  font-style: italic;
+}
+.no-result p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.no-result p a {
+  color: #363636 !important;
+}
+.no-result p a:hover {
+  font-style: italic;
+}
+.no-result p a:link, .no-result p a:visited, .no-result p a:hover, .no-result p a:active {
+  color: #363636 !important;
+}
+
 .filter-form {
   display: flex;
 }
