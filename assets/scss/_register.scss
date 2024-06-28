@@ -1,13 +1,11 @@
 .registerForm {
     width:45%;
-    margin-left:auto;
-    margin-right:auto;
+    margin:3em auto;
     display:flex;
     flex-direction:column;
     align-items:center;
     background-color:$white;
     font-family: $mainfont;
-    margin-top:1dvh;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius: 25px;
     padding-top:3dvh;
@@ -15,6 +13,9 @@
     padding-left:1dvw;
     padding-right:1dvw;
     color:$darkgray;
+    @include mobile {
+        width : 90%;
+    }
 
     h2 {
         text-align: center;
@@ -33,6 +34,8 @@
 
         input {
             width: 90%;
+            padding: 5px 10px;
+            border-radius: 5px ;
             background-color: $lightgray;
             margin-bottom:1dvh;
             border:1px solid $darkgray;
@@ -48,6 +51,15 @@
             display:block;
             margin-bottom:1dvh;
             margin-top:3dvh;
+            &:hover {
+                transition: ease 0.4s;
+                font-weight: bold;
+                border: 2px solid $darkgray;
+                transform:  scale(102%);
+            }
+            @include mobile {
+                width : 40%;
+            }
         }
     }
 
@@ -67,4 +79,14 @@
             color: $darkgray !important;
         }
     }
+}
+
+
+.error {
+    width: 90%;
+    display: flex;
+    background-color: rgb(207, 132, 132,0.5);
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
 }
