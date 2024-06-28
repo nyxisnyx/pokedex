@@ -167,7 +167,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                         <?php if ($prevEvolution): ?>
                             <div class="evolution-card">
                                 <a href="show.php?id=<?php echo htmlspecialchars($prevEvolution['ID']); ?>">
-                                    <img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>">
+                                    <div class="evolPic"><img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>"></div>
                                     <p><?php echo htmlspecialchars($prevEvolution['name']); ?></p>
                                 </a>
                             </div>
@@ -176,7 +176,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             <?php foreach ($allPrevEvolutions as $prevEvolution): ?>
                                 <div class="evolution-card">
                                     <a href="show.php?id=<?php echo htmlspecialchars($prevEvolution['ID']); ?>">
-                                        <img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>">
+                                        <div class="evolPic"><img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>"></div>
                                         <p><?php echo htmlspecialchars($prevEvolution['name']); ?></p>
                                     </a>
                                 </div>
@@ -187,14 +187,14 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                         <?php endif; ?>
                     
                         <div class="evolution-card">
-                            <img src="<?php echo htmlspecialchars($pokemon['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($pokemon['name']); ?>">
+                            <div class="evolPic"><img src="<?php echo htmlspecialchars($pokemon['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($pokemon['name']); ?>"></div>
                             <p><?php echo htmlspecialchars($pokemon['name']); ?></p>
                         </div>
                     
                         <?php if ($nextEvolution): ?>
                             <div class="evolution-card">
                                 <a href="show.php?id=<?php echo htmlspecialchars($nextEvolution['ID']); ?>">
-                                    <img src="<?php echo htmlspecialchars($nextEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($nextEvolution['name']); ?>">
+                                    <div class="evolPic"><img src="<?php echo htmlspecialchars($nextEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($nextEvolution['name']); ?>"></div>
                                     <p><?php echo htmlspecialchars($nextEvolution['name']); ?></p>
                                 </a>
                             </div>
@@ -209,7 +209,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             <?php foreach ($allNextEvolutions as $nextEvolution): ?>
                                 <div class="evolution-card">
                                     <a href="show.php?id=<?php echo htmlspecialchars($nextEvolution['ID']); ?>">
-                                        <img src="<?php echo htmlspecialchars($nextEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($nextEvolution['name']); ?>">
+                                        <div class="evolPic"><img src="<?php echo htmlspecialchars($nextEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($nextEvolution['name']); ?>"></div>
                                         <p><?php echo htmlspecialchars($nextEvolution['name']); ?></p>
                                     </a>
                                 </div>
@@ -220,7 +220,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 <div class="detailsright">
                     <img class="poke-image" src="../../../assets/images/pokemon/<?php echo htmlspecialchars($pokemon['imageBig']); ?>" alt="<?php echo htmlspecialchars($pokemon['name']); ?> sprite">
                     <p><?php echo htmlspecialchars($pokemon["ID"]); ?></p>
-                    <p><strong>Description:</strong> <?php echo htmlspecialchars($pokemon['description']); ?></p>
+                    <p class="pokeDescri"><strong>Description:</strong> <?php echo htmlspecialchars($pokemon['description']); ?></p>
                 </div>
             </div>
         <?php else: ?>

@@ -1,9 +1,13 @@
 .pokemon-details {
     display:flex;
+    justify-content: space-between;
     font-family: $mainfont;
 
     .detailsleft {
-        width: 60%;
+        width: 50%;
+        margin-left:3dvw;
+        color:$darkgray !important;
+        text-decoration: none !important;
 
         .infosBlock {
             border-radius:25px;
@@ -11,9 +15,62 @@
             background-color:$white;
         }
 
+        .evolution {
+            border-radius:25px;
+            padding:1rem;
+            background-color:$white;
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top:3dvh;
+            color:$darkgray !important;
+            text-decoration: none !important;
+
+            .evolution-card {
+                margin-left:2rem;
+                margin-right:2rem;
+                color:$darkgray !important;
+                text-decoration: none !important;
+
+                a {
+                    color:$darkgray !important;
+                text-decoration: none !important;
+                }
+
+                .evolPic {
+                    background-color: $lightgray;
+                    border-radius: 50%;;
+                    padding:1rem;
+                }
+                
+                p {
+                    text-align:center;
+                    color:$darkgray !important;
+                    text-decoration: none !important;
+                }
+            }
+        }
+
     }
 
     .detailsright {
         width:40%;
+        margin-right:3dvw;
+        display:flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 60%;
+            display:block;
+        }
+
+        .pokeDescri {
+            background-color: $white;
+            padding:1rem;
+            border-radius:25px;
+            text-align:justify;
+        }
     }
 }
