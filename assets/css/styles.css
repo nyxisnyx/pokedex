@@ -615,8 +615,22 @@ footer .githubLinks img {
   padding: 5px 15px;
   font-weight: bold;
   border-radius: 5px;
+  animation: myAnim 2s ease 0s 1 normal upwards;
 }
 
+@keyframes myAnim {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
 .search {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   display: flex;
@@ -639,4 +653,13 @@ footer .githubLinks img {
   transition: ease 0.4s;
   font-weight: bold;
   transform: scale(102%);
+}
+
+.no-result {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+  margin-bottom: 4vh;
+}
+.no-result span {
+  font-weight: bold;
+  font-style: italic;
 }/*# sourceMappingURL=styles.css.map */

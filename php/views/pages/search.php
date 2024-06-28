@@ -73,7 +73,7 @@ require_once __DIR__ . '/../partials/head.php';
             <!-- </div> -->
         </main>
     <?php else: ?>
-        <p>No results found for "<?php echo htmlspecialchars($searchQuery); ?>"</p>
+        <p class="no-result">No pokemon found for <span>"<?php echo htmlspecialchars($searchQuery); ?>"</span></p>
     <?php endif; ?>
 </main>
 

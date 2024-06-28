@@ -5,7 +5,8 @@ require_once __DIR__ . '../../partials/head.php';
 require_once ("../../queries/connect.php");
 
 // Function to get Pokemon details by ID
-function getPokemonDetails($id) {
+function getPokemonDetails($id)
+{
     global $pdo;
     $stmt = $pdo->prepare("SELECT * FROM pokemon WHERE ID = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -14,7 +15,8 @@ function getPokemonDetails($id) {
 }
 
 // Function to recursively fetch previous evolutions
-function fetchPreviousEvolutions($id, &$evolutions) {
+function fetchPreviousEvolutions($id, &$evolutions)
+{
     global $pdo;
     $stmt = $pdo->prepare("SELECT * FROM pokemon WHERE evolutionNext = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -28,7 +30,8 @@ function fetchPreviousEvolutions($id, &$evolutions) {
 }
 
 // Function to recursively fetch next evolutions
-function fetchNextEvolutions($id, &$evolutions) {
+function fetchNextEvolutions($id, &$evolutions)
+{
     global $pdo;
     $stmt = $pdo->prepare("SELECT * FROM pokemon WHERE evolutionPrev = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -81,6 +84,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($pokemon['name'] ?? 'Pokemon Details'); ?></title>
@@ -112,14 +116,19 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         }
     </style>
 </head>
+
 <body>
     <main>
         <?php if ($pokemon): ?>
             <div class="pokemon-details">
                 <h1><?php echo htmlspecialchars($pokemon['name']) ?? 'Pokemon Details'; ?></h1>
-                <img class="poke-image" src="../../../assets/images/pokemon/<?php echo htmlspecialchars($pokemon['imageBig']); ?>" alt="<?php echo htmlspecialchars($pokemon['name']); ?> sprite">
+                <img class="poke-image"
+                    src="../../../assets/images/pokemon/<?php echo htmlspecialchars($pokemon['imageBig']); ?>"
+                    alt="<?php echo htmlspecialchars($pokemon['name']); ?> sprite">
                 <p><?php echo htmlspecialchars($pokemon["ID"]); ?></p>
-                <p><?php echo htmlspecialchars($pokemon['type1']); ?><?php if (!empty($pokemon['type2'])) echo '   ' . htmlspecialchars($pokemon['type2']); ?></p>
+                <p><?php echo htmlspecialchars($pokemon['type1']); ?><?php if (!empty($pokemon['type2']))
+                       echo '   ' . htmlspecialchars($pokemon['type2']); ?>
+                </p>
                 <p><strong>Description:</strong> <?php echo htmlspecialchars($pokemon['description']); ?></p>
 
                 <div class="stats">
@@ -132,25 +141,29 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     <div class="stat-bar">
                         <span>Attack</span>
                         <div class="bar">
-                            <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Attack']); ?>%;"></div>
+                            <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Attack']); ?>%;">
+                            </div>
                         </div>
                     </div>
                     <div class="stat-bar">
                         <span>Defense</span>
                         <div class="bar">
-                            <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Defense']); ?>%;"></div>
+                            <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Defense']); ?>%;">
+                            </div>
                         </div>
                     </div>
                     <div class="stat-bar">
                         <span>Specific Attack</span>
                         <div class="bar">
-                            <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Sp. Attack']); ?>%;"></div>
+                            <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Sp. Attack']); ?>%;">
+                            </div>
                         </div>
                     </div>
                     <div class="stat-bar">
                         <span>Specific Defense</span>
                         <div class="bar">
-                            <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Sp. Defense']); ?>%;"></div>
+                            <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Sp. Defense']); ?>%;">
+                            </div>
                         </div>
                     </div>
                     <div class="stat-bar">
@@ -162,53 +175,58 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 </div>
 
                 <div class="evolution">
-                
+
                     <?php if ($prevEvolution): ?>
                         <div class="evolution-card">
                             <a href="show.php?id=<?php echo htmlspecialchars($prevEvolution['ID']); ?>">
-                                <img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>">
+                                <img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>"
+                                    alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>">
                                 <p><?php echo htmlspecialchars($prevEvolution['name']); ?></p>
                             </a>
                         </div>
                         <?php // Display all previous evolutions of the previous evolution ?>
-                    <?php if (!empty($allPrevEvolutions)): ?>
-                        <?php foreach ($allPrevEvolutions as $prevEvolution): ?>
-                            <div class="evolution-card">
-                                <a href="show.php?id=<?php echo htmlspecialchars($prevEvolution['ID']); ?>">
-                                    <img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>">
-                                    <p><?php echo htmlspecialchars($prevEvolution['name']); ?></p>
-                                </a>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                        <?php if (!empty($allPrevEvolutions)): ?>
+                            <?php foreach ($allPrevEvolutions as $prevEvolution): ?>
+                                <div class="evolution-card">
+                                    <a href="show.php?id=<?php echo htmlspecialchars($prevEvolution['ID']); ?>">
+                                        <img src="<?php echo htmlspecialchars($prevEvolution['imageThumbnail']); ?>"
+                                            alt="<?php echo htmlspecialchars($prevEvolution['name']); ?>">
+                                        <p><?php echo htmlspecialchars($prevEvolution['name']); ?></p>
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     <?php else: ?>
                         <div class="evolution-card"></div>
                     <?php endif; ?>
-                    
+
                     <div class="evolution-card">
-                        <img src="<?php echo htmlspecialchars($pokemon['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($pokemon['name']); ?>">
+                        <img src="<?php echo htmlspecialchars($pokemon['imageThumbnail']); ?>"
+                            alt="<?php echo htmlspecialchars($pokemon['name']); ?>">
                         <p><?php echo htmlspecialchars($pokemon['name']); ?></p>
                     </div>
-                    
+
                     <?php if ($nextEvolution): ?>
                         <div class="evolution-card">
                             <a href="show.php?id=<?php echo htmlspecialchars($nextEvolution['ID']); ?>">
-                                <img src="<?php echo htmlspecialchars($nextEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($nextEvolution['name']); ?>">
+                                <img src="<?php echo htmlspecialchars($nextEvolution['imageThumbnail']); ?>"
+                                    alt="<?php echo htmlspecialchars($nextEvolution['name']); ?>">
                                 <p><?php echo htmlspecialchars($nextEvolution['name']); ?></p>
                             </a>
                         </div>
                     <?php else: ?>
                         <div class="evolution-card"></div>
                     <?php endif; ?>
-                    
-                    
-                    
+
+
+
                     <?php // Display all next evolutions of the next evolution ?>
                     <?php if (!empty($allNextEvolutions)): ?>
                         <?php foreach ($allNextEvolutions as $nextEvolution): ?>
                             <div class="evolution-card">
                                 <a href="show.php?id=<?php echo htmlspecialchars($nextEvolution['ID']); ?>">
-                                    <img src="<?php echo htmlspecialchars($nextEvolution['imageThumbnail']); ?>" alt="<?php echo htmlspecialchars($nextEvolution['name']); ?>">
+                                    <img src="<?php echo htmlspecialchars($nextEvolution['imageThumbnail']); ?>"
+                                        alt="<?php echo htmlspecialchars($nextEvolution['name']); ?>">
                                     <p><?php echo htmlspecialchars($nextEvolution['name']); ?></p>
                                 </a>
                             </div>
@@ -221,6 +239,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <?php endif; ?>
     </main>
 </body>
+
 </html>
 
 <?php

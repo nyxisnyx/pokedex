@@ -21,3 +21,12 @@
         }
 }
 }
+
+.no-result {
+    font-family: $mainfont;
+    margin-bottom: 4vh;
+    span {
+        font-weight: bold;
+        font-style: italic;
+    }
+}
