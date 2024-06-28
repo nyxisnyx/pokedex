@@ -1,19 +1,19 @@
 <?php
 // Function that transforms an int into a Pokémon ID format
-function formatPokeId($number) {
-    $formattedNumber = str_pad($number, 4, '0', STR_PAD_LEFT);
-    return $formattedNumber . '#';
-}
+// function formatPokeId($number) {
+//     $formattedNumber = str_pad($number, 4, '0', STR_PAD_LEFT);
+//     return $formattedNumber . '#';
+// }
 
-// Connect to the DB
-require_once __DIR__ . '/../../queries/connect.php'; // Adjust path as needed
+// // Connect to the DB
+// require_once __DIR__ . '/../../queries/connect.php'; // Adjust path as needed
 
 // Define all Pokémon types
 $allTypes = ["Normal", "Fire", "Fighting", "Water", "Flying", "Grass", "Poison", "Electric", "Ground", "Psychic", "Rock", "Ice", "Bug", "Dragon", "Ghost", "Dark", "Steel", "Fairy"];
 
 // Handle filter input
 $selectedTypes = [];
-$results = [];
+// $results = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['type']) && is_array($_GET['type'])) {
     $selectedTypes = $_GET['type'];
@@ -25,25 +25,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['type']) && is_array($_GE
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-$title = "Filter Results";
-require_once __DIR__ . '/../partials/head.php'; // Adjust path as needed
-?>
+// $title = "Filter Results";
+// require_once __DIR__ . '/../partials/head.php'; // Adjust path as needed
+// ?>
 
-<main>
-    <form method="GET" action="filter.php">
-        <label for="type">Filter by Type:</label>
-        <div>
+<!-- <main> -->
+    <form class= "filter-form" method="GET" action="">
+        <div class="filter-div">
             <?php foreach ($allTypes as $type): ?>
-                <label>
+                <label class="filter <?php echo htmlspecialchars($type); ?>">
                     <input type="checkbox" name="type[]" value="<?php echo htmlspecialchars($type); ?>" <?php echo in_array($type, $selectedTypes) ? 'checked' : ''; ?>>
-                    <?php echo htmlspecialchars($type); ?>
+                    <span class="checkbox"></span>
+                    <span class="checkbox-value <?php echo htmlspecialchars($type); ?>"><?php echo htmlspecialchars($type); ?></span>
                 </label>
             <?php endforeach; ?>
         </div>
         <button type="submit">Filter</button>
     </form>
     
-    <?php if (!empty($results)): ?>
+    <!-- <?php if (!empty($results)): ?>
         <div class="pokemon-list">
             <?php foreach ($results as $pokemon): ?>
                 <div class="poke-card">
@@ -65,9 +65,9 @@ require_once __DIR__ . '/../partials/head.php'; // Adjust path as needed
         </div>
     <?php else: ?>
         <p>No results found for the selected type(s).</p>
-    <?php endif; ?>
-</main>
+    <?php endif; ?> -->
+<!-- </main>
 
 <?php
 require_once __DIR__ . '/../partials/end.php'; // Adjust path as needed
-?>
+?> -->

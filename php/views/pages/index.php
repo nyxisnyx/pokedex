@@ -1,9 +1,9 @@
 <?php
 // Function that transforms an int into a Pokémon ID format
-function formatPokeId($number) {
-    $formattedNumber = str_pad($number, 4, '0', STR_PAD_LEFT);
-    return $formattedNumber . '#';
-}
+// function formatPokeId($number) {
+//     $formattedNumber = str_pad($number, 4, '0', STR_PAD_LEFT);
+//     return $formattedNumber . '#';
+// }
 
 // Connect to the DB
 require_once __DIR__ . '/../../queries/connect.php'; // Adjust path as needed
@@ -54,22 +54,8 @@ require_once __DIR__ . '/../partials/head.php'; // Adjust path as needed
     <form method="GET" action="index.php">
         <input type="text" name="search" placeholder="Search by name or ID" value="<?php echo htmlspecialchars($searchQuery); ?>">
         <button type="submit">Search</button>
-        
-        <div class="filter-section">
-            <label for="type">Filter by Type:</label>
-            <div class="type-checkboxes">
-                <?php foreach ($allTypes as $type): ?>
-                    <label class="type-checkbox">
-                        <input type="checkbox" name="type[]" value="<?php echo htmlspecialchars($type); ?>" <?php echo in_array($type, $selectedTypes) ? 'checked' : ''; ?>>
-                        <?php echo htmlspecialchars($type); ?>
-                    </label>
-                <?php endforeach; ?>
-            </div>
-        </div>
-        
-        <button type="submit">Filter</button>
     </form>
-    
+    <?php require_once '../partials/filter.php';?>
     <?php if (!empty($results)): ?>
         <div class="pokemon-list">
             <?php paginate($results, $page, $per_page); ?>
