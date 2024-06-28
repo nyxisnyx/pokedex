@@ -161,6 +161,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             </div>
                         </div>
                     </div>
+                    
 
                     <div class="evolution">
                 
