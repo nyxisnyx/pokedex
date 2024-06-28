@@ -1,0 +1,110 @@
+// Custom checkbox styles
+.filter-form{
+    display: flex;
+    .filter-div{
+        display: flex;
+    }
+}
+label {
+    cursor: pointer;
+    input[type="checkbox"] {
+        display: none; // Hide the default checkbox
+    }
+}
+
+// Styles for each Pokémon type
+.filter{
+    font-size: 15px;
+    height: 30px;
+    max-width:40%;
+    text-align: center;
+    display:flex;
+    border-radius:10px;
+}
+
+.Fire {
+    background-color: #ef3838;
+    color: #580e0e;
+}
+
+.Fighting {
+    background-color: #ff8000;
+    color: #422100;
+}
+
+.Water {
+    background-color: #297ff0;
+    color: #0f325e;
+}
+
+.Flying {
+    background-color: #81baf0;
+    color: #33495f;
+}
+
+.Grass {
+    background-color: #3ea128;
+    color: #194110;
+}
+
+.Poison {
+    background-color: #a957e4;
+    color: #451568;
+}
+
+.Electric {
+    background-color: #ffce2c;
+    color: #876700;
+}
+
+.Ground {
+    background-color: #915221;
+    color: #f4be95;
+}
+
+.Psychic {
+    background-color: #f04178;
+    color: #53172a;
+}
+
+.Rock {
+    background-color: #b0aa82;
+    color: #585541;
+}
+
+.Ice {
+    background-color: #3dcef2;
+    color: #174c5a;
+}
+
+.Bug {
+    background-color: #b9cc24;
+    color: #4c540e;
+}
+
+.Dragon {
+    background-color: #5162e0;
+    color: #a6aeec;
+}
+
+.Ghost {
+    background-color: #704170;
+    color: #e7a1e7;
+}
+
+.Dark {
+    background-color: #614d4e;
+    color: #ddc5c6;
+}
+
+.Steel {
+    background-color: #5fa0b8;
+    color: #28444e;
+}
+
+.Fairy {
+    background-color: #f071f0;
+    color: #6f356f;
+}
+
+
