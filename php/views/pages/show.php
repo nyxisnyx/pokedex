@@ -117,46 +117,47 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <?php if ($pokemon): ?>
             <div class="pokemon-details">
                 <div class="detailsleft">
-                    <h1><?php echo htmlspecialchars($pokemon['name']) ?? 'Pokemon Details'; ?></h1>
+                    <div class="infosBlock">
+                        <h1><?php echo htmlspecialchars($pokemon['name']) ?? 'Pokemon Details'; ?></h1>
                     
-                    <p><?php echo htmlspecialchars($pokemon['type1']); ?><?php if (!empty($pokemon['type2'])) echo '   ' . htmlspecialchars($pokemon['type2']); ?></p>
-                    <p><strong>Description:</strong> <?php echo htmlspecialchars($pokemon['description']); ?></p>
+                        <p><?php echo htmlspecialchars($pokemon['type1']); ?><?php if (!empty($pokemon['type2'])) echo '   ' . htmlspecialchars($pokemon['type2']); ?></p>
 
-                    <div class="stats">
-                        <div class="stat-bar">
-                            <span>HP</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['HP']); ?>%;"></div>
+                        <div class="stats">
+                            <div class="stat-bar">
+                                <span>HP</span>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['HP']); ?>%;"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="stat-bar">
-                            <span>Attack</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Attack']); ?>%;"></div>
+                            <div class="stat-bar">
+                                <span>Attack</span>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Attack']); ?>%;"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="stat-bar">
-                            <span>Defense</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Defense']); ?>%;"></div>
+                            <div class="stat-bar">
+                                <span>Defense</span>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Defense']); ?>%;"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="stat-bar">
-                            <span>Specific Attack</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Sp. Attack']); ?>%;"></div>
+                            <div class="stat-bar">
+                                <span>Specific Attack</span>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Sp. Attack']); ?>%;"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="stat-bar">
-                            <span>Specific Defense</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Sp. Defense']); ?>%;"></div>
+                            <div class="stat-bar">
+                                <span>Specific Defense</span>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Sp. Defense']); ?>%;"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="stat-bar">
-                            <span>Speed</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Speed']); ?>%;"></div>
+                            <div class="stat-bar">
+                                <span>Speed</span>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: <?php echo htmlspecialchars($pokemon['Speed']); ?>%;"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -219,6 +220,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 <div class="detailsright">
                     <img class="poke-image" src="../../../assets/images/pokemon/<?php echo htmlspecialchars($pokemon['imageBig']); ?>" alt="<?php echo htmlspecialchars($pokemon['name']); ?> sprite">
                     <p><?php echo htmlspecialchars($pokemon["ID"]); ?></p>
+                    <p><strong>Description:</strong> <?php echo htmlspecialchars($pokemon['description']); ?></p>
                 </div>
             </div>
         <?php else: ?>

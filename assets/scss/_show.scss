@@ -1,3 +1,19 @@
 .pokemon-details {
     display:flex;
+    font-family: $mainfont;
+
+    .detailsleft {
+        width: 60%;
+
+        .infosBlock {
+            border-radius:25px;
+            padding:1rem;
+            background-color:$white;
+        }
+
+    }
+
+    .detailsright {
+        width:40%;
+    }
 }

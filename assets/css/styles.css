@@ -643,4 +643,16 @@ footer .githubLinks img {
 
 .pokemon-details {
   display: flex;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+}
+.pokemon-details .detailsleft {
+  width: 60%;
+}
+.pokemon-details .detailsleft .infosBlock {
+  border-radius: 25px;
+  padding: 1rem;
+  background-color: #fff;
+}
+.pokemon-details .detailsright {
+  width: 40%;
 }/*# sourceMappingURL=styles.css.map */
