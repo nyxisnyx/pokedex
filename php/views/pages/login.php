@@ -5,9 +5,9 @@ require_once __DIR__ . '../../partials/head.php';
 
 <?php
 
-if (!isset($_SESSION['user'])) {
-    session_start();
-}
+// if (!isset($_SESSION['user'])) {
+//     session_start();
+// }
 
 
 // Handles the login form submission
@@ -65,6 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         <?php endif; ?>
     </div>
 </main>
-<script <?php
+<?php
 require_once __DIR__ . '../../partials/end.php';
 ?>

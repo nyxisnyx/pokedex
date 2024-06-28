@@ -29,4 +29,18 @@
         font-weight: bold;
         font-style: italic;
     }
+    p {
+        text-align: center;
+        margin-top: .5rem;
+
+        a {
+            color: $darkgray !important;
+        }
+        a:hover {
+            font-style: italic;
+        }
+        a:link, a:visited, a:hover, a:active {
+            color: $darkgray !important;
+        }
+    }
 }

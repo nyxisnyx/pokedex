@@ -34,22 +34,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['search'])) {
     }
 }
 
-$title = "Search Results";
 require_once __DIR__ . '/../partials/head.php';
+$title = "Search Results";
 ?>
 
-<main>
-    <div class="search">
-        <form method="GET" action="search.php">
-            <input type="text" name="search" placeholder="Search by name or ID">
-            <button type="submit">Search</button>
-        </form>
-    </div>
+<!-- <main> -->
+<div class="search">
+    <form method="GET" action="search.php">
+        <input type="text" name="search" placeholder="Search by name or ID">
+        <button type="submit">Search</button>
+    </form>
+</div>
 
-    <?php if (!empty($results)): ?>
-        <main>
-            <!-- <div class="pokemon-list"> -->
-            <!-- <?php foreach ($results as $pokemon): ?>
+<?php if (!empty($results)): ?>
+    <!-- <main> -->
+    <!-- <div class="pokemon-list"> -->
+    <!-- <?php foreach ($results as $pokemon): ?>
                 <div class="poke-card">
                     <a href="show.php?id=<?php echo htmlspecialchars($pokemon['ID']); ?>">
                         <img src="<?php echo htmlspecialchars($pokemon['imageThumbnail']); ?>"
@@ -69,12 +69,12 @@ require_once __DIR__ . '/../partials/head.php';
                     </a>
                 </div>
             <?php endforeach; ?> -->
-            <?php paginate($results, $page); ?>
-            <!-- </div> -->
-        </main>
-    <?php else: ?>
-        <p class="no-result">No pokemon found for <span>"<?php echo htmlspecialchars($searchQuery); ?>"</span></p>
-    <?php endif; ?>
+    <?php paginate($results, $page); ?>
+    <!-- </div> -->
+    </main>
+<?php else: ?>
+    <p class="no-result">No pokemon found for <span>"<?php echo htmlspecialchars($searchQuery); ?>"</span></p>
+<?php endif; ?>
 </main>
 
 <?php

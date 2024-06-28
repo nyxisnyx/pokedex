@@ -662,4 +662,47 @@ footer .githubLinks img {
 .no-result span {
   font-weight: bold;
   font-style: italic;
+}
+.no-result p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.no-result p a {
+  color: #363636 !important;
+}
+.no-result p a:hover {
+  font-style: italic;
+}
+.no-result p a:link, .no-result p a:visited, .no-result p a:hover, .no-result p a:active {
+  color: #363636 !important;
+}
+
+.stat-bar {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  width: 80%;
+}
+
+.stat-bar span {
+  width: 100px;
+  text-align: left;
+}
+
+.bar {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.bar-fill {
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.dark-mode {
+  background-color: black;
 }/*# sourceMappingURL=styles.css.map */

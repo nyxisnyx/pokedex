@@ -33,3 +33,34 @@ for (let fav of favs) {
       });
   });
 }
+
+const darkModeBtn = document.querySelector("#dark_mode");
+darkModeBtn.addEventListener("click", (e) => {
+  const data = { darkMode: "switch" };
+  fetch("../partials/dark_mode.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error("Network response was not ok.");
+    })
+    .then((data) => {
+      if (data.status == "success") {
+        console.log(data);
+        // if (data.message.includes("added")) {
+        //   fav.src = "../../../assets/images/star.svg";
+        // } else {
+        //   fav.src = "../../../assets/images/star_void.svg";
+        // }
+      }
+    })
+    .catch((error) => {
+      console.error("Fetch error:", error);
+    });
+});
