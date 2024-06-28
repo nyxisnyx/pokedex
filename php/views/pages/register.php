@@ -5,7 +5,7 @@ require_once __DIR__ . '../../partials/head.php';
 
 <?php
 
-session_start();
+// session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["password-confirm"])) {
@@ -13,16 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $password = trim(htmlspecialchars($_POST["password"]));
         $password_confirm = trim(htmlspecialchars($_POST["password-confirm"]));
         // CHECK IF PW AND PW confirm match
-        if ($password != $password_confirm) {
+        if ($password !== $password_confirm) {
             $message_pw = "Password and password confirmation do not match!";
         }
         if ($username == "" or $password == "") {
             $message = "Please fill out all fields";
-        }
-        // CHECK if username already exists within DB return error (unique usernames)
-        else {
-            require_once ("../../queries/connect.php");
+        } else {
+            // CHECK if username already exists within DB return error (unique usernames)
             try {
+                require_once ("../../queries/connect.php");
                 $stmt = $pdo->prepare('SELECT username FROM users WHERE username=:username');
                 $stmt->bindParam(':username', $username);
                 $stmt->execute();
@@ -51,13 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 }
 ?>
 
-
-
 <div class="registerForm">
     <h2>Register</h2>
     <h5>
         <?php if (isset($message)) {
-            echo $message;
+            echo "<div class='error'>$message";
         }
         ?>
     </h5>
