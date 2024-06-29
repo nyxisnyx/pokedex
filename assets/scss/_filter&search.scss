@@ -4,9 +4,6 @@
     max-width: 95vw;
     margin-bottom: 8vh;
     gap: 20px;
-    &>* {
-        border: 1px solid red;
-    }
     @include mobile {
         flex-direction: column-reverse;
         &>* {

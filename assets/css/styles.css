@@ -544,9 +544,6 @@ footer .githubLinks img {
   margin-bottom: 8vh;
   gap: 20px;
 }
-.filter-search > * {
-  border: 1px solid red;
-}
 @media screen and (max-width: 768px) {
   .filter-search {
     flex-direction: column-reverse;
@@ -554,28 +551,6 @@ footer .githubLinks img {
   .filter-search > * {
     max-width: 95vw;
   }
-}
-
-.no-result {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
-  margin-bottom: 4vh;
-}
-.no-result span {
-  font-weight: bold;
-  font-style: italic;
-}
-.no-result p {
-  text-align: center;
-  margin-top: 0.5rem;
-}
-.no-result p a {
-  color: #363636 !important;
-}
-.no-result p a:hover {
-  font-style: italic;
-}
-.no-result p a:link, .no-result p a:visited, .no-result p a:hover, .no-result p a:active {
-  color: #363636 !important;
 }
 
 .filter-form {
@@ -866,70 +841,4 @@ label input[type=checkbox] {
   color: rgb(167, 165, 165);
   top: -25px;
   right: -10px;
-}
-
-.pokemon-details {
-  display: flex;
-  justify-content: space-between;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
-}
-.pokemon-details .detailsleft {
-  width: 50%;
-  margin-left: 3dvw;
-  color: #363636 !important;
-  text-decoration: none !important;
-}
-.pokemon-details .detailsleft .infosBlock {
-  border-radius: 25px;
-  padding: 1rem;
-  background-color: #fff;
-}
-.pokemon-details .detailsleft .evolution {
-  border-radius: 25px;
-  padding: 1rem;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 3dvh;
-  color: #363636 !important;
-  text-decoration: none !important;
-}
-.pokemon-details .detailsleft .evolution .evolution-card {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  color: #363636 !important;
-  text-decoration: none !important;
-}
-.pokemon-details .detailsleft .evolution .evolution-card a {
-  color: #363636 !important;
-  text-decoration: none !important;
-}
-.pokemon-details .detailsleft .evolution .evolution-card .evolPic {
-  background-color: #ccc;
-  border-radius: 50%;
-  padding: 1rem;
-}
-.pokemon-details .detailsleft .evolution .evolution-card p {
-  text-align: center;
-  color: #363636 !important;
-  text-decoration: none !important;
-}
-.pokemon-details .detailsright {
-  width: 40%;
-  margin-right: 3dvw;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-}
-.pokemon-details .detailsright img {
-  width: 60%;
-  display: block;
-}
-.pokemon-details .detailsright .pokeDescri {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 25px;
-  text-align: justify;
 }/*# sourceMappingURL=styles.css.map */
