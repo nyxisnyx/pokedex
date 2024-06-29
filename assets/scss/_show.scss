@@ -6,12 +6,14 @@
     flex-wrap: nowrap;
     margin: 4vh 2vw;
     overflow:hidden;
-    border: 1px solid red;
 
     .detailsleft {
         width: 50%;
         color:$darkgray !important;
         text-decoration: none !important;
+        display:flex;
+        justify-content:space-between;
+        flex-direction: column;
         .infosBlock {
             border-radius:25px;
             padding:1rem;
@@ -30,6 +32,36 @@
                 border-radius:10px;
                 display:block;
                 padding: 1dvh;
+            }
+        }
+        .stats {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .stat-bar {
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+                width: 95%;
+            }
+            
+            .stat-bar span {
+                width: 20%;
+                text-align: left;
+            }
+            
+            .bar {
+                width: 80%;
+                background-color: #eee;
+                border-radius: 5px;
+                margin-left: 10px;
+                position: relative;
+            }
+            
+            .bar-fill {
+                height: 15px;
+                background-color: #4caf50;
+                border-radius: 5px;
             }
         }
         .evolution {
@@ -64,6 +96,9 @@
                     color:$darkgray !important;
                     text-decoration: none !important;
                 }
+                .current {
+                    filter: grayscale(0.8);
+                }
             }
         }
     }
@@ -72,12 +107,12 @@
         position: relative;
         width:40%;
         display:flex;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-direction: column;
         align-items: center;
-
         img {
-            width: 60%;
+            margin-top: 7%;
+            width: 70%;
             display:block;
         }
         .pokeDescri {
@@ -103,51 +138,20 @@
     }
 }
 
-
-.stats {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.stat-bar {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-    width: 95%;
-}
-
-.stat-bar span {
-    width: 20%;
-    text-align: left;
-}
-
-.bar {
-    width: 80%;
-    background-color: #eee;
-    border-radius: 5px;
-    margin-left: 10px;
-    position: relative;
-}
-
-.bar-fill {
-    height: 15px;
-    background-color: #4caf50;
-    border-radius: 5px;
-}
-
 .pokeId {
     position:absolute;
-    width: 90%;
-    height: 80%;
-    font-size: 8rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    font-size: 12vw;
     z-index:-1;
     font-weight: bolder;
     text-wrap:nowrap;
     color: rgb(167, 165, 165);
-    top: -25px;
-    right: -10px;
+    top:0;
+    @include mobile {
+        font-size: 30vw;
+    }
 }
 
-.current {
-    filter: grayscale(0.8);
-}

@@ -725,12 +725,14 @@ input[type=checkbox]:checked {
   flex-wrap: nowrap;
   margin: 4vh 2vw;
   overflow: hidden;
-  border: 1px solid red;
 }
 .pokemon-details .detailsleft {
   width: 50%;
   color: #3c5aa6 !important;
   text-decoration: none !important;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 .pokemon-details .detailsleft .infosBlock {
   border-radius: 25px;
@@ -751,6 +753,33 @@ input[type=checkbox]:checked {
   border-radius: 10px;
   display: block;
   padding: 1dvh;
+}
+.pokemon-details .detailsleft .stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.pokemon-details .detailsleft .stats .stat-bar {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  width: 95%;
+}
+.pokemon-details .detailsleft .stats .stat-bar span {
+  width: 20%;
+  text-align: left;
+}
+.pokemon-details .detailsleft .stats .bar {
+  width: 80%;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-left: 10px;
+  position: relative;
+}
+.pokemon-details .detailsleft .stats .bar-fill {
+  height: 15px;
+  background-color: #4caf50;
+  border-radius: 5px;
 }
 .pokemon-details .detailsleft .evolution {
   border-radius: 25px;
@@ -784,16 +813,20 @@ input[type=checkbox]:checked {
   color: #3c5aa6 !important;
   text-decoration: none !important;
 }
+.pokemon-details .detailsleft .evolution .evolution-card .current {
+  filter: grayscale(0.8);
+}
 .pokemon-details .detailsright {
   position: relative;
   width: 40%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
 }
 .pokemon-details .detailsright img {
-  width: 60%;
+  margin-top: 7%;
+  width: 70%;
   display: block;
 }
 .pokemon-details .detailsright .pokeDescri {
@@ -818,51 +851,22 @@ input[type=checkbox]:checked {
   }
 }
 
-.stats {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.stat-bar {
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-  width: 95%;
-}
-
-.stat-bar span {
-  width: 20%;
-  text-align: left;
-}
-
-.bar {
-  width: 80%;
-  background-color: #eee;
-  border-radius: 5px;
-  margin-left: 10px;
-  position: relative;
-}
-
-.bar-fill {
-  height: 15px;
-  background-color: #4caf50;
-  border-radius: 5px;
-}
-
 .pokeId {
   position: absolute;
-  width: 90%;
-  height: 80%;
-  font-size: 8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 12vw;
   z-index: -1;
   font-weight: bolder;
   text-wrap: nowrap;
   color: rgb(167, 165, 165);
-  top: -25px;
-  right: -10px;
+  top: 0;
 }
-
-.current {
-  filter: grayscale(0.8);
+@media screen and (max-width: 768px) {
+  .pokeId {
+    font-size: 30vw;
+  }
 }/*# sourceMappingURL=styles.css.map */
