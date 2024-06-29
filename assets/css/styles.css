@@ -399,26 +399,26 @@ footer .githubLinks img {
   color: #3c5aa6 !important;
 }
 
+main {
+  position: relative;
+}
+
 .greet {
+  position: absolute;
+  top: 0;
+  right: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
   color: #3c5aa6;
-  font-size: 27px;
-  width: 90vw;
-  margin-bottom: 8vh;
   gap: 1vh;
 }
+.greet p {
+  font-size: 15px;
+}
 .greet button {
-  font-size: 18px;
-  border-radius: 10px;
-  border: 4px solid #3c5aa6;
-  color: #3c5aa6;
-  padding: 0.4rem 0.8rem;
-  background-color: rgb(255, 205, 3);
+  border: none;
+  background-color: transparent;
 }
 .greet button:hover {
   cursor: pointer;
@@ -427,8 +427,9 @@ footer .githubLinks img {
 }
 
 .section-title {
+  margin-top: 5vh;
   color: #3c5aa6;
-  margin-bottom: 8vh;
+  margin-bottom: 4vh;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   justify-content: center;
   font-weight: normal;
@@ -582,14 +583,8 @@ footer .githubLinks img {
   transition: ease 0.4s;
 }
 
-label {
-  cursor: pointer;
-}
-label input[type=checkbox] {
-  display: none;
-}
-
 .filter {
+  cursor: pointer;
   position: relative;
   font-size: 15px;
   height: 30px;
@@ -602,10 +597,7 @@ label input[type=checkbox] {
   display: flex;
   border-radius: 10px;
 }
-
-.checkbox-value {
-  height: 100%;
-  width: 100%;
+.filter input[type=checkbox] {
   display: none;
 }
 
@@ -719,6 +711,10 @@ label input[type=checkbox] {
 .Fairy {
   background-color: #f071f0;
   color: #6f356f;
+}
+
+input[type=checkbox]:checked {
+  display: block;
 }
 
 .pokemon-details {

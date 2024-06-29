@@ -5,11 +5,6 @@ require_once __DIR__ . '../../partials/head.php';
 
 <?php
 
-// if (!isset($_SESSION['user'])) {
-//     session_start();
-// }
-
-
 // Handles the login form submission
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST["password"]) && isset($_POST["username"])) {
@@ -20,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 }
 ?>
-
 <main>
     <?php if (!isset($_SESSION["user"])): ?>
         <div class="loginPage">
@@ -38,9 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             </form>
             <p>Not registered yet? <a href="register.php">Register</a></p>
         <?php else: ?>
-            <section class="greet">Hello, trainer <?php echo $_SESSION["user"] ?> !
+            <section class="greet">
+                <p>Logged as <?php echo $_SESSION["user"] ?></p>
                 <form method="POST" action="../partials/logout.php">
-                    <button type="submit">Logout</button>
+                    <button type="submit">
+                        <img title="Log Out" class="logout" src="../../../assets/images/logout.svg" alt="Log Out">
+                    </button>
                 </form>
             </section>
             <?php
@@ -57,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     $results = $stmt->fetchAll();
                     require_once ("../partials/pagination.php");
                     echo "<h5 class='section-title'>Your favourite Pokemon</h5>";
+                    require ("../partials/search&filter.php");
                     paginate($results, $page);
                 } catch (PDOException $e) {
                     $message = "Database error: " . $e->getMessage();

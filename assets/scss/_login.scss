@@ -79,38 +79,37 @@
     }
 }
 
+main {
+    position : relative;
+}
 .greet {
+    position : absolute;
+    top: 0;
+    right: 10px;
     font-family: $mainfont;
-    display : flex;
-    flex-direction : column;
-    justify-content:center;
+    display:flex;
     align-items:center;
-    text-align:center;
     color: $darkgray;
-    font-size: 27px;
-    width: 90vw;
-    margin-bottom: 8vh;
     gap: 1vh;
+        p {
+        font-size: 15px;
+    }
     button {
-        font-size: 18px;
-        border-radius: 10px;
-        border: 4px solid $darkgray;
-        color: $darkgray;
-        padding:0.4rem 0.8rem;
-        background-color: rgb(255, 205, 3);
+        // display:flex;
+        border :none;
+        background-color: transparent;
         &:hover {
             cursor: pointer;
             transform: scale(102%);
-            // background-color: rgb(215, 215, 215);
             transition: ease 0.4s;
         }
     }
 }
 
 .section-title {
+    margin-top:5vh;
     color: $darkgray;
-
-    margin-bottom: 8vh;
+    margin-bottom: 4vh;
     font-family: $mainfont;
     justify-content:center;
     font-weight: normal;

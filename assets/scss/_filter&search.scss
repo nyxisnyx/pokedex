@@ -43,14 +43,8 @@
         }
     }
 }
-label {
+.filter {
     cursor: pointer;
-    input[type="checkbox"] {
-        display: none; // Hide the default checkbox
-    }
-}
-// Styles for each Pokémon type
-.filter{
     position: relative;
     font-size: 15px;
     height: 30px;
@@ -62,14 +56,10 @@ label {
     align-content:center;
     display:flex;
     border-radius:10px;
+    input[type="checkbox"] {
+        display: none; // Hide the default checkbox
+    }
 }
-
-.checkbox-value {
-    height: 100%;
-    width: 100%;
-    display:none;
-}
-
 
 
 .search {
@@ -92,7 +82,6 @@ label {
         border: 5px solid #3c5aa6;
         background-color: #ffcd03;
         color : #3c5aa6;
-
         &:hover {
             cursor: pointer;
             transition: ease 0.4s;
@@ -100,8 +89,6 @@ label {
         }
 }
 }
-
-
 
 .Fire {
     background-color: #ef3838;
@@ -187,3 +174,17 @@ label {
     background-color: #f071f0;
     color: #6f356f;
 }
+
+
+// input[type="checkbox"]:checked + .filter {
+//     border: 5px solid black !important;
+//     background-color: red !important;
+//     color: blue;
+// }
+
+input[type="checkbox"]:checked {
+    display:block;
+}
+
+
+

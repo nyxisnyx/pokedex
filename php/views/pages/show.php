@@ -146,8 +146,6 @@ $title = "Show Details"; ?>
                         </div>
                     </div>
                 </div>
-
-
                 <div class="evolution">
 
                     <?php if ($prevEvolution): ?>
