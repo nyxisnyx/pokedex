@@ -6,6 +6,7 @@
     flex-wrap: nowrap;
     margin: 4vh 2vw;
     overflow:hidden;
+    border: 1px solid red;
 
     .detailsleft {
         width: 50%;
@@ -24,28 +25,26 @@
             gap: 10px;
             text-align: center;
             font-weight: bold;
-            > * {
-                width:20%;
+            > p {
+                width:120px;
                 border-radius:10px;
                 display:block;
                 padding: 1dvh;
             }
-
         }
         .evolution {
             border-radius:25px;
             padding:1rem;
             background-color:$white;
             display:flex;
-            flex-direction: row;
-            justify-content: center;
+            // flex-direction: row;
+            justify-content: space-evenly;
+            gap: 10px;
             margin-top:3dvh;
             color:$darkgray !important;
             text-decoration: none !important;
-
+            overflow-x:auto;
             .evolution-card {
-                margin-left:2rem;
-                margin-right:2rem;
                 color:$darkgray !important;
                 text-decoration: none !important;
                 a {
@@ -57,6 +56,8 @@
                     background-color: $lightgray;
                     border-radius: 50%;;
                     padding:1rem;
+                    width: 100px;
+                    height: 100px;
                 }
                 p {
                     text-align:center;
@@ -70,7 +71,6 @@
     .detailsright {
         position: relative;
         width:40%;
-        margin-right:3dvw;
         display:flex;
         justify-content: space-around;
         flex-direction: column;
@@ -89,6 +89,8 @@
     }
     @include mobile{
         flex-direction: column-reverse;
+        align-items:center;
+
         gap: 5vh;
         &>*, .detailsleft, .detailsright {
             justify-content:center;
@@ -144,4 +146,8 @@
     color: rgb(167, 165, 165);
     top: -25px;
     right: -10px;
+}
+
+.current {
+    filter: grayscale(0.8);
 }

@@ -60,7 +60,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $allNextEvolutions = [];
     fetchNextEvolutions($pokemonId, $allNextEvolutions);
 
-
 } else {
     echo "<p>Invalid Pokemon ID.</p>";
 }
@@ -150,7 +149,8 @@ $title = "Show Details"; ?>
                         <?php endforeach; ?>
                     <?php endif; ?>
                     <div class="evolution-card">
-                        <div class="evolPic"><img src="<?php echo htmlspecialchars($pokemon['imageThumbnail']); ?>"
+                        <div class="evolPic"><img class="current"
+                                src="<?php echo htmlspecialchars($pokemon['imageThumbnail']); ?>"
                                 alt="<?php echo htmlspecialchars($pokemon['name']); ?>"></div>
                         <p><?php echo htmlspecialchars($pokemon['name']); ?></p>
                     </div>

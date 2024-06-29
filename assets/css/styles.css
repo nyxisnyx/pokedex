@@ -725,6 +725,7 @@ input[type=checkbox]:checked {
   flex-wrap: nowrap;
   margin: 4vh 2vw;
   overflow: hidden;
+  border: 1px solid red;
 }
 .pokemon-details .detailsleft {
   width: 50%;
@@ -745,8 +746,8 @@ input[type=checkbox]:checked {
   text-align: center;
   font-weight: bold;
 }
-.pokemon-details .detailsleft .details-types > * {
-  width: 20%;
+.pokemon-details .detailsleft .details-types > p {
+  width: 120px;
   border-radius: 10px;
   display: block;
   padding: 1dvh;
@@ -756,15 +757,14 @@ input[type=checkbox]:checked {
   padding: 1rem;
   background-color: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 10px;
   margin-top: 3dvh;
   color: #3c5aa6 !important;
   text-decoration: none !important;
+  overflow-x: auto;
 }
 .pokemon-details .detailsleft .evolution .evolution-card {
-  margin-left: 2rem;
-  margin-right: 2rem;
   color: #3c5aa6 !important;
   text-decoration: none !important;
 }
@@ -776,6 +776,8 @@ input[type=checkbox]:checked {
   background-color: #ccc;
   border-radius: 50%;
   padding: 1rem;
+  width: 100px;
+  height: 100px;
 }
 .pokemon-details .detailsleft .evolution .evolution-card p {
   text-align: center;
@@ -785,7 +787,6 @@ input[type=checkbox]:checked {
 .pokemon-details .detailsright {
   position: relative;
   width: 40%;
-  margin-right: 3dvw;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -804,6 +805,7 @@ input[type=checkbox]:checked {
 @media screen and (max-width: 768px) {
   .pokemon-details {
     flex-direction: column-reverse;
+    align-items: center;
     gap: 5vh;
   }
   .pokemon-details > *, .pokemon-details .detailsleft, .pokemon-details .detailsright {
@@ -859,4 +861,8 @@ input[type=checkbox]:checked {
   color: rgb(167, 165, 165);
   top: -25px;
   right: -10px;
+}
+
+.current {
+  filter: grayscale(0.8);
 }/*# sourceMappingURL=styles.css.map */
