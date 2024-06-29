@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '../../partials/head.php';
 
 // Include database connection
 require_once ("../../queries/connect.php");
