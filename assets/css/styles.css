@@ -724,7 +724,6 @@ input[type=checkbox]:checked {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   flex-wrap: nowrap;
   margin: 4vh 2vw;
-  overflow: hidden;
 }
 .pokemon-details .detailsleft {
   width: 50%;
@@ -863,7 +862,7 @@ input[type=checkbox]:checked {
   font-weight: bolder;
   text-wrap: nowrap;
   color: rgb(167, 165, 165);
-  top: 0;
+  top: -20px;
 }
 @media screen and (max-width: 768px) {
   .pokeId {

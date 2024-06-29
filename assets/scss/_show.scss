@@ -5,7 +5,6 @@
     font-family: $mainfont;
     flex-wrap: nowrap;
     margin: 4vh 2vw;
-    overflow:hidden;
 
     .detailsleft {
         width: 50%;
@@ -149,7 +148,7 @@
     font-weight: bolder;
     text-wrap:nowrap;
     color: rgb(167, 165, 165);
-    top:0;
+    top:-20px;
     @include mobile {
         font-size: 30vw;
     }
