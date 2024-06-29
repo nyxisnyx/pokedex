@@ -86,22 +86,30 @@
     justify-content:center;
     align-items:center;
     text-align:center;
+    color: $darkgray;
     font-size: 27px;
     width: 90vw;
     margin-bottom: 8vh;
     gap: 1vh;
     button {
         font-size: 18px;
-        border-radius: 5px;
-        border: 1px solid $darkgray;
+        border-radius: 10px;
+        border: 4px solid $darkgray;
+        color: $darkgray;
         padding:0.4rem 0.8rem;
+        background-color: rgb(255, 205, 3);
         &:hover {
             cursor: pointer;
+            transform: scale(102%);
+            // background-color: rgb(215, 215, 215);
+            transition: ease 0.4s;
         }
     }
 }
 
 .section-title {
+    color: $darkgray;
+
     margin-bottom: 8vh;
     font-family: $mainfont;
     justify-content:center;

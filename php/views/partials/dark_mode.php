@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $darkMode = 1;
             }
-            $stmt = $pdo-> prepare("UPDATE darkMode FROM users SET  WHERE user_id =:user_id")
+            $stmt = $pdo->prepare("UPDATE darkMode FROM users SET  WHERE user_id =:user_id");
 
-            echo json_encode(['status' => 'success', 'message' => 'Preference registered']);
+            // echo json_encode(['status' => 'success', 'message' => 'Preference registered']);
         } catch (PDOException $e) {
             echo "ERROR:" . $e->getMessage();
         }

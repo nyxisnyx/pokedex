@@ -1,0 +1,192 @@
+
+.filter-search {
+    display:flex;
+    max-width: 95vw;
+    margin-bottom: 8vh;
+    gap: 20px;
+    &>* {
+        border: 1px solid red;
+    }
+    @include mobile {
+        flex-direction: column-reverse;
+        &>* {
+            max-width: 95vw;
+        }
+    }
+}
+
+// Custom checkbox styles
+.filter-form{
+    flex: 70%;
+    display: flex;
+    flex-direction: column;
+    // margin-bottom: 10vh;
+    font-family: $mainfont;
+    align-items:center;
+    gap: 2vh;
+    .filter-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    button {
+        width: 90px;
+        padding: 5px;
+        border-radius: 10px;
+        border: 5px solid #3c5aa6;
+        background-color: #ffcd03;
+        color : #3c5aa6;
+        &:hover {
+            cursor: pointer;
+            transform: scale(102%);
+            // background-color: rgb(215, 215, 215);
+            transition: ease 0.4s;
+        }
+    }
+}
+label {
+    cursor: pointer;
+    input[type="checkbox"] {
+        display: none; // Hide the default checkbox
+    }
+}
+// Styles for each Pokémon type
+.filter{
+    position: relative;
+    font-size: 15px;
+    height: 30px;
+    width: 80px;
+    box-sizing:border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    display:flex;
+    border-radius:10px;
+}
+
+.checkbox-value {
+    height: 100%;
+    width: 100%;
+    display:none;
+}
+
+
+
+.search {
+    flex: 25%;
+    font-family: $mainfont;
+    display:flex;
+    width:  100vw;
+    justify-content: right;
+    input {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border:1px solid $darkgray;
+    }
+    button {
+        border-radius: 5px;
+        // border: 1px solid $darkgray;
+        padding: 2px 10px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        border: 5px solid #3c5aa6;
+        background-color: #ffcd03;
+        color : #3c5aa6;
+
+        &:hover {
+            cursor: pointer;
+            transition: ease 0.4s;
+            transform:  scale(102%);
+        }
+}
+}
+
+
+
+.Fire {
+    background-color: #ef3838;
+    color: #580e0e;
+}
+
+.Fighting {
+    background-color: #ff8000;
+    color: #422100;
+}
+
+.Water {
+    background-color: #297ff0;
+    color: #0f325e;
+}
+
+.Flying {
+    background-color: #81baf0;
+    color: #33495f;
+}
+
+.Grass {
+    background-color: #3ea128;
+    color: #194110;
+}
+
+.Poison {
+    background-color: #a957e4;
+    color: #451568;
+}
+
+.Electric {
+    background-color: #ffce2c;
+    color: #876700;
+}
+
+.Ground {
+    background-color: #915221;
+    color: #f4be95;
+}
+
+.Psychic {
+    background-color: #f04178;
+    color: #53172a;
+}
+
+.Rock {
+    background-color: #b0aa82;
+    color: #585541;
+}
+
+.Ice {
+    background-color: #3dcef2;
+    color: #174c5a;
+}
+
+.Bug {
+    background-color: #b9cc24;
+    color: #4c540e;
+}
+
+.Dragon {
+    background-color: #5162e0;
+    color: #a6aeec;
+}
+
+.Ghost {
+    background-color: #704170;
+    color: #e7a1e7;
+}
+
+.Dark {
+    background-color: #614d4e;
+    color: #ddc5c6;
+}
+
+.Steel {
+    background-color: #5fa0b8;
+    color: #28444e;
+}
+
+.Fairy {
+    background-color: #f071f0;
+    color: #6f356f;
+}

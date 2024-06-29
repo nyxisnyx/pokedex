@@ -47,6 +47,6 @@ if (!isset($_SESSION["user_id"])) {
         <a href="register.php" class='navbarLink <?php if (isset($title) && $title == "Register") {
             echo "active";
         } ?>'>Register</a>
-        <button type="submit" id="dark_mode">Toggle DM</button>
+        <!-- <button type="submit" id="dark_mode">Toggle DM</button> -->
     </nav>
 </header>

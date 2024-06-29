@@ -1,20 +1,20 @@
 .pokemon-details {
     display:flex;
+    flex-direction: row;
     justify-content: space-between;
     font-family: $mainfont;
+    flex-wrap: nowrap;
+    width: 95%;
 
     .detailsleft {
         width: 50%;
-        margin-left:3dvw;
         color:$darkgray !important;
         text-decoration: none !important;
-
         .infosBlock {
             border-radius:25px;
             padding:1rem;
             background-color:$white;
-        }
-
+        } 
         .evolution {
             border-radius:25px;
             padding:1rem;
@@ -31,7 +31,6 @@
                 margin-right:2rem;
                 color:$darkgray !important;
                 text-decoration: none !important;
-
                 a {
                     color:$darkgray !important;
                 text-decoration: none !important;
@@ -42,7 +41,6 @@
                     border-radius: 50%;;
                     padding:1rem;
                 }
-                
                 p {
                     text-align:center;
                     color:$darkgray !important;
@@ -54,6 +52,7 @@
     }
 
     .detailsright {
+        position: relative;
         width:40%;
         margin-right:3dvw;
         display:flex;
@@ -65,7 +64,6 @@
             width: 60%;
             display:block;
         }
-
         .pokeDescri {
             background-color: $white;
             padding:1rem;
@@ -73,4 +71,55 @@
             text-align:justify;
         }
     }
+    @include mobile{
+        flex-direction: column-reverse;
+        gap: 5vh;
+        &>*, .detailsleft, .detailsright {
+            justify-content:center;
+            width : 95%;
+            margin-right: 0;
+        }
+        .detailsright {
+            align-self:center;
+        }
+    }
+}
+
+.stat-bar {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    width: 80%;
+}
+
+.stat-bar span {
+    width: 100px;
+    text-align: left;
+}
+
+.bar {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.bar-fill {
+    height: 15px;
+    background-color: #4caf50;
+    border-radius: 5px;
+}
+
+.pokeId {
+    position:absolute;
+    width: 90%;
+    height: 80%;
+    font-size: 8rem;
+    z-index:-1;
+    font-weight: bolder;
+    text-wrap:nowrap;
+    color: rgb(167, 165, 165);
+    top: -25px;
+    right: -10px;
 }
