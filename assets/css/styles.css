@@ -723,7 +723,8 @@ input[type=checkbox]:checked {
   justify-content: space-between;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
   flex-wrap: nowrap;
-  width: 95%;
+  margin: 4vh 2vw;
+  overflow: hidden;
 }
 .pokemon-details .detailsleft {
   width: 50%;
@@ -734,6 +735,21 @@ input[type=checkbox]:checked {
   border-radius: 25px;
   padding: 1rem;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.pokemon-details .detailsleft .details-types {
+  margin: 10px 0 20px 0;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.pokemon-details .detailsleft .details-types > * {
+  width: 20%;
+  border-radius: 10px;
+  display: block;
+  padding: 1dvh;
 }
 .pokemon-details .detailsleft .evolution {
   border-radius: 25px;
@@ -800,20 +816,26 @@ input[type=checkbox]:checked {
   }
 }
 
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .stat-bar {
   display: flex;
   align-items: center;
   margin: 5px 0;
-  width: 80%;
+  width: 95%;
 }
 
 .stat-bar span {
-  width: 100px;
+  width: 20%;
   text-align: left;
 }
 
 .bar {
-  width: 100%;
+  width: 80%;
   background-color: #eee;
   border-radius: 5px;
   margin-left: 10px;
